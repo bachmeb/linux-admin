@@ -2,6 +2,7 @@
 
 ## References
 * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx
+* http://ubuntuforums.org/showthread.php?t=2231441
 
 ##### Download Ubuntu Desktop
 
@@ -41,3 +42,8 @@ diskutil eject /dev/diskN
 ```
 
 ##### Restart your Mac and press alt/option key while the Mac is restarting to choose the USB stick.
+
+##### Look for the wifi adapter
+```
+lspci -nnk | grep -iA2 net
+```
