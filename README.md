@@ -5,3 +5,4 @@
 
 ##### Ubuntu
 * [USB OSX](/docs/ubuntu/usb-osx.md)
+* Chromebook
