@@ -1,15 +1,13 @@
 # linux-install
 
-#### x86
 
-#### x64
-* Red Hat Enterprise Linux
+##### Red Hat Enterprise Linux
+* x64
   * [5.11](/docs/rhel/5.11.md)
   * [6.4](/docs/rhel/6.4.md)
 
-#### Mac
-* Ubuntu
+##### Ubuntu
+* Mac
   * [USB OSX](/docs/ubuntu/usb-osx.md)
-
-#### Chromebook
-* Ubuntu
+* Chromebook
+  * [Chromebook Ubuntu](/docs/ubuntu/chromebook.md)
