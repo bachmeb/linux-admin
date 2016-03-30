@@ -6,6 +6,10 @@
   * [5.11](/docs/rhel/5.11/x64.md)
   * [6.4](/docs/rhel/6.4/x64.md)
 
+##### SLAX
+* USB
+ * [OSX](/docs/slax/osx.md)
+
 ##### Ubuntu
 * Mac
   * [USB OSX](/docs/ubuntu/macbook-air.md)
