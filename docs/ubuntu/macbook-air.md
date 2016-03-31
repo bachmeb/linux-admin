@@ -1,4 +1,4 @@
-# ubuntu usb osx
+# ubuntu macbook air
 
 ## References
 * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx
