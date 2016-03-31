@@ -23,6 +23,31 @@ All local files will be deleted while enabling developer mode.
 * The machine will reboot
 * Hit Ctrl-D
 * Hit Enter
+* Wait about 10 minutes
+* Let the system reboot
+
+##### Download Crouton 
+* https://github.com/dnschneid/crouton
+* https://goo.gl/fd3zc
+
+##### Open a terminal tab
+* Ctrl+Alt+T to bring up a terminal on your Chromebook.
+
+##### Open a bash shell
+```
+shell
+```
+
+##### Install Crouton with xfce
+```
+sudo sh -e ~/Downloads/crouton -t xfce
+```
+
+##### Wait for all of the packages to be downloaded and installed
+...about ten mintes.
+
+##### Have fun
+...
 
 ##### Delete crouton
 ```
