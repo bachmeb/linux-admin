@@ -37,6 +37,15 @@ All local files will be deleted while enabling developer mode.
 ```
 shell
 ```
+##### See where you are
+```
+pwd
+```
+
+##### See who you are
+```
+whoami
+```
 
 ##### Install Crouton with xfce
 ```
