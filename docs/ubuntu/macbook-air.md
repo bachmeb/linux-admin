@@ -21,15 +21,17 @@ hdiutil convert -format UDRW -o ~/path/to/target.img ~/path/to/ubuntu.iso
 diskutil list
 ```
 
-##### Insert your flash media.
+##### Insert the USB stick
 
-##### Get the current list of disks again and determine the device node assigned to your flash media (e.g. /dev/disk2).
+##### Get the current list of disks again and figure out which device node has been assigned to the USB storage device (e.g. /dev/disk2).
+```
+diskutil list
+```
 
-##### Unmount the USB device
+##### Unmount the USB device (replace N with the disk number from the last command)
 ```
 diskutil unmountDisk /dev/diskN
 ```
-(replace N with the disk number from the last command; in the previous example, N would be 2).
 
 ##### Copy the contents of the Ubuntu image to the USB device. This will erase any contents of the USB device. 
 ```
@@ -43,7 +45,11 @@ Using /dev/rdisk instead of /dev/disk may be faster
 diskutil eject /dev/diskN
 ```
 
-##### Restart your Mac and press alt/option key while the Mac is restarting to choose the USB stick.
+##### Restart the machine
+* Apple > Restart
+
+##### Choose the USB device as the startup device
+* Press and hold Alt-Option 
 
 ##### Look for the wifi adapter
 ```
