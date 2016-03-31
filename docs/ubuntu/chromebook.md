@@ -7,3 +7,25 @@
 * http://lifehacker.com/how-to-install-linux-on-a-chromebook-and-unlock-its-ful-509039343
 * https://training.linuxfoundation.org/why-our-linux-training/blogs/lftstaff/846-use-linux-on-your-chromebook
 * https://github.com/dnschneid/crouton
+
+### Requirements
+* Chromebook
+* 4GB USB stick
+
+##### Back up any files stored on the Chromebook
+All local files will be deleted while enabling developer mode.
+
+##### Use the Recovery Utility to create a restore image
+* https://support.google.com/chromebook/answer/6002417?hl=en&source=genius-rts
+
+##### Enable developer mode
+* Hit Esc-Refresh-Power
+* The machine will reboot
+* Hit Ctrl-D
+* Hit Enter
+
+##### Delete crouton
+```
+sudo rm -fr /usr/local/bin
+sudo rm -fr /usr/local/chroots/
+```
