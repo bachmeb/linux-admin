@@ -31,7 +31,7 @@ All local files will be deleted while enabling developer mode.
 * https://goo.gl/fd3zc
 
 ##### Open a terminal tab
-* Ctrl+Alt+T to bring up a terminal on your Chromebook.
+* Ctrl+Alt+T
 
 ##### Open a bash shell
 ```
