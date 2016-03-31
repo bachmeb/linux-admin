@@ -869,7 +869,7 @@ Get:43 http://archive.ubuntu.com precise/multiverse Sources [155 kB]
 Hit http://archive.ubuntu.com precise/main amd64 Packages 
 Get:44 http://archive.ubuntu.com precise/restricted amd64 Packages [8452 B]
 Get:45 http://archive.ubuntu.com precise/universe amd64 Packages [4786 kB]
-78% [42 Sources bzip2 0 B] [45 Packages 1102 kB/4786 kB 23%]                                                                            1635 kB/s 2s^CUnmounting /mnt/stateful_partition/crouton/chroots/precise...
+...
 ```
 
 ##### Start xfce
