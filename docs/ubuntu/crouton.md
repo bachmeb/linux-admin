@@ -37,6 +37,7 @@ All local files will be deleted while enabling developer mode.
 ```
 shell
 ```
+
 ##### See where you are
 ```
 pwd
@@ -45,6 +46,11 @@ pwd
 ##### See who you are
 ```
 whoami
+```
+
+##### List the recognized releases and which distros to which they belong
+```
+sudo sh ~/Downloads/crouton -r list
 ```
 
 ##### Install Crouton with xfce
