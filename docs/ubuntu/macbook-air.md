@@ -5,6 +5,7 @@
 * http://ubuntuforums.org/showthread.php?t=2231441
 
 ##### Download Ubuntu Desktop
+* http://ubuntu.com
 
 ##### Open the OSX Terminal
 * /Applications/Utilities/Terminal
