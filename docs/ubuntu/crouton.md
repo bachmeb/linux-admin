@@ -38,6 +38,11 @@ All local files will be deleted while enabling developer mode.
 shell
 ```
 
+##### See which shell you are using
+```
+echo $0
+```
+
 ##### See where you are
 ```
 pwd
@@ -51,6 +56,19 @@ whoami
 ##### List the recognized releases and which distros to which they belong
 ```
 sudo sh ~/Downloads/crouton -r list
+```
+```
+Downloading latest crouton installer...
+######################################################################## 100.0%
+Recognized debian releases:
+    potato* woody* sarge* etch* lenny* squeeze* wheezy jessie stretch sid
+Recognized kali releases:
+    kali* sana* kali-rolling
+Recognized ubuntu releases:
+    warty* hoary* breezy* dapper* edgy* feisty* gutsy* hardy* intrepid* jaunty*
+    karmic* lucid* maverick* natty* oneiric* precise quantal* raring* saucy*
+    trusty utopic* vivid* wily* xenial*
+Releases marked with * are unsupported, but may work with some effort.
 ```
 
 ##### Install Crouton with xfce
@@ -883,11 +901,34 @@ Get:45 http://archive.ubuntu.com precise/universe amd64 Packages [4786 kB]
 sudo startxfce4
 ```
 
+##### Let the setup complete
+```
+Entering /mnt/stateful_partition/crouton/chroots/precise...
+A chroot setup script still exists inside the chroot.
+The chroot may not be fully set up.
+Would you like to finish the setup? [Y/n/d] y
+Preparing chroot environment...
+Installing target core...
+Preparing environment...
+Preparing software sources...
+```
+
+##### Create a new username and password
+```
+Please specify a username for the primary user: bachmeb
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+```
 ##### Have fun
 ...
 
+##### Switch back to Chrome OS
+* Shift-Ctrl-Alt-Back (Back is the key next to the Esc key, not the Left key)
+ 
 ##### Delete crouton
 ```
+reboot
 sudo rm -fr /usr/local/bin
 sudo rm -fr /usr/local/chroots/
 ```
