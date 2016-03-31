@@ -15,6 +15,6 @@
 
 ##### Ubuntu
 * Mac
-  * [USB OSX](/docs/ubuntu/macbook-air.md)
+  * [Macbook Air](/docs/ubuntu/macbook-air.md)
 * Chromebook
-  * [Chromebook Ubuntu](/docs/ubuntu/chromebook.md)
+  * [Crouton](/docs/ubuntu/chromebook.md)
