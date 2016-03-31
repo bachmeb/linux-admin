@@ -6,7 +6,8 @@
 
 ##### Download Ubuntu Desktop
 
-##### Open the Terminal (in /Applications/Utilities/ or query Terminal in Spotlight).
+##### Open the OSX Terminal
+* /Applications/Utilities/Terminal
 
 ##### Convert the .iso file to .img using the convert option of hdiutil e.g.,
 ```
