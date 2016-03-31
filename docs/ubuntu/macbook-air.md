@@ -49,7 +49,7 @@ diskutil eject /dev/diskN
 * Apple > Restart
 
 ##### Choose the USB device as the startup device
-* Press and hold Alt-Option 
+* Press and hold Alt-Option before the Apple icon appears during reboot
 
 ##### Look for the wifi adapter
 ```
