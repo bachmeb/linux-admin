@@ -34,12 +34,11 @@ diskutil list
 diskutil unmountDisk /dev/diskN
 ```
 
-##### Copy the contents of the Ubuntu image to the USB device. This will erase any contents of the USB device. 
+##### Copy the contents of the Ubuntu image to the USB device. This will erase any contents of the USB device.
+*Using /dev/rdisk instead of /dev/disk may be faster*
 ```
-sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
+sudo dd if=/path/to/downloaded.img.dmg of=/dev/rdiskN bs=1m
 ```
-(replace /path/to/downloaded.img with the path where the image file is located; for example, ./ubuntu.img or ./ubuntu.dmg).
-Using /dev/rdisk instead of /dev/disk may be faster
 
 ##### Eject the disk
 ```
