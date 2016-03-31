@@ -53,7 +53,6 @@ sudo sh -e ~/Downloads/crouton -t xfce
 ```
 
 ##### Wait for all of the packages to be downloaded and installed
-...about ten mintes.
 ```
 Installing precise-amd64 chroot to /usr/local/chroots/precise
 Downloading latest debootstrap...
@@ -871,6 +870,11 @@ Hit http://archive.ubuntu.com precise/main amd64 Packages
 Get:44 http://archive.ubuntu.com precise/restricted amd64 Packages [8452 B]
 Get:45 http://archive.ubuntu.com precise/universe amd64 Packages [4786 kB]
 78% [42 Sources bzip2 0 B] [45 Packages 1102 kB/4786 kB 23%]                                                                            1635 kB/s 2s^CUnmounting /mnt/stateful_partition/crouton/chroots/precise...
+```
+
+##### Start xfce
+```
+sudo startxfce4
 ```
 
 ##### Have fun
