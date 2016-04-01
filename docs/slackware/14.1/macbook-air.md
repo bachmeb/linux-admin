@@ -1,4 +1,4 @@
-# macbook air slackware 14
+# slackware 14 macbook air 
 
 ## References
 * http://www.slackware.com/getslack/
