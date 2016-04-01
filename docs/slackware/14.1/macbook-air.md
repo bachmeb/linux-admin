@@ -75,6 +75,11 @@ diskutil eject /dev/diskN
 ##### Restart the machine
 * Apple > Restart
 
+##### Temporarily change your startup disk with Startup Manager
+* Press and hold the Alt/Option key after the startup sound plays and before the Apple icon appears
+
 ##### Choose the USB device as the startup device
-* Press and hold Alt-Option before the Apple icon appears during reboot
+* The device will probably be labeled Windows
+
+
 
