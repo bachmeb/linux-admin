@@ -55,7 +55,9 @@ sudo dd if=/path/to/downloaded.img.dmg of=/dev/rdiskN bs=1m
 diskutil list
 ```
 ```
-
+/dev/disk2
+   #:           TYPE NAME         SIZE       IDENTIFIER
+   0                             *4.0 GB     disk2
 ```
 
 ##### Eject the disk
