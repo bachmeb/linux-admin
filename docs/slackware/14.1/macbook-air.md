@@ -43,9 +43,12 @@ diskutil unmountDisk /dev/diskN
 ```
 sudo dd if=/path/to/downloaded.img.dmg of=/dev/rdiskN bs=1m
 ```
-
 *This takes about 10 minutes with a USB 2.0 device*
-
+```
+2370+0 records in
+2370+0 records out
+2485125120 bytes transferred in 349.217615 secs (7116265 bytes/sec)
+```
 ##### Get the current list of disks again 
 *Note that the partition scheme should have changed.*
 ```
