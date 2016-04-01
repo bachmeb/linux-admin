@@ -28,7 +28,7 @@ diskutil list
 ##### Insert the 4GB USB stick
 
 ##### Get the current list of disks again 
-*figure out which device node has been assigned to the USB storage device (e.g. /dev/disk2)*
+*Figure out which device node has been assigned to the USB storage device (e.g. /dev/disk2)*
 ```
 diskutil list
 ```
