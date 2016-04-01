@@ -7,6 +7,7 @@
 * http://docs.slackware.com/
 * http://docs.slackware.com/slackware:install
 * http://www.linuxquestions.org/questions/slackware-14/installing-slackware-on-a-macbook-pro-925730/
+* http://www.syslinux.org/wiki/index.php?title=Doc/isolinux#HYBRID_CD-ROM.2FHARD_DISK_MODE
 
 ### Requirements
 * 4GB USB storage device
