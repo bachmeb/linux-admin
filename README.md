@@ -9,6 +9,7 @@
 
 ##### Slackware
 * 14.1
+  * [Macbook Air](/docs/slackware/14.1/macbook-air.md)
   * [x64](/docs/slackware/14.1/x64.md)
 
 ##### SLAX
