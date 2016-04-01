@@ -38,7 +38,7 @@ diskutil list
 diskutil unmountDisk /dev/diskN
 ```
 
-##### Copy the contents of the Ubuntu image to the USB device. This will erase any contents of the USB device.
+##### Copy the contents of the disk image to the USB device. This will erase any contents of the USB device.
 *Using /dev/rdisk instead of /dev/disk may be faster*
 ```
 sudo dd if=/path/to/downloaded.img.dmg of=/dev/rdiskN bs=1m
@@ -66,7 +66,3 @@ diskutil eject /dev/diskN
 ##### Choose the USB device as the startup device
 * Press and hold Alt-Option before the Apple icon appears during reboot
 
-##### Look for the wifi adapter
-```
-lspci -nnk | grep -iA2 net
-```
