@@ -13,10 +13,11 @@
   * [x64](/docs/slackware/14.1/x64.md)
 
 ##### SLAX
-* USB
- * [OSX](/docs/slax/usb/osx.md)
+* 7
+ * [OSX USB](/docs/slax/7/osx-usb.md)
 
 ##### Ubuntu
 * 14
+  * [Chromebook](/docs/ubuntu/14/chromebook.md)
   * [Macbook Air](/docs/ubuntu/14/macbook-air.md)
-  * [Chromebook](/docs/ubuntu/chromebook.md)
+  * [OSX USB](/docs/ubuntu/14/osx-usb.md)
