@@ -6,6 +6,8 @@
   * [x64](/docs/rhel/5.11/x64.md)
 * 6.4
   * [x64](/docs/rhel/6.4/x64.md)
+* 7.2
+  * [x64](/docs/rhel/7.2/x64.md)
 
 ##### Slackware
 * 14.1
