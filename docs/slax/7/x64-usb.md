@@ -12,9 +12,9 @@
 
 ##### Download SLAX 64-bit ZIP
 * https://www.slax.org/en/download.php
-* slax-English-US-7.0.8-x86_64.zip
 
 ##### Extract the contents of the zip file to the SLAX USB using 7-zip, not Windows Explorer
+* slax-English-US-7.0.8-x86_64.zip
 
 ##### Locate and run bootinst.bat on the SLAX USB
 * SLAX:\slax\boot\bootinst.bat
