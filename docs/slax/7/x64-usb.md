@@ -1,9 +1,21 @@
 # slax 7 x64 usb
 
 ## References
-* http://old.slax.org/forum.php?action=view&parentID=1230
-* http://www.makeuseof.com/tag/how-to-boot-a-linux-live-usb-stick-on-your-mac/
-* http://sevenbits.github.io/Mac-Linux-USB-Loader/
-* https://studyblast.wordpress.com/2011/08/14/guide-mac-os-x-lion-how-to-boot-a-linux-live-system-from-a-usb-drive-how-to-update-any-ocz-ssds-firmware/
-* http://sevenbits-tech-blog.blogspot.com/
+* https://www.slax.org/en/documentation.php
+
+##### Format a USB storage device
+* Capacity: 7.21 GB
+* File system: FAT32
+* Allocation unit size: 64 kilbytes (largest allocation size)
+* Format options: Quick Format
+* Volume label: SLAX
+
+##### Download SLAX 64-bit ZIP
 * https://www.slax.org/en/download.php
+* slax-English-US-7.0.8-x86_64.zip
+
+##### Extract the contents of the zip file to the SLAX USB using 7-zip, not Windows Explorer
+
+##### Locate and run bootinst.bat on the SLAX USB
+* SLAX:\slax\boot\bootinst.bat
+
