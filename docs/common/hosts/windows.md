@@ -45,3 +45,8 @@
 
 ##### Save the changes
 * File > Save
+
+##### Open a windows command prompt and ping the destination hostname
+```
+ping hostname
+```
