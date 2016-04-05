@@ -63,10 +63,17 @@ sudo nano /etc/sysconfig/network
 ```
 HOSTNAME=[somehost].localdomain
 ```
-Edit the hosts file
-
+##### Edit the hosts file
+```
 sudo nano /etc/hosts
+```
+```c
+/*
 127.0.0.1  [somehost] [somehost].localdomain localhost localhost.localdomain
-Reboot the system to pick up the new hostname and time zone information in all services and applications
+*/
 
+##### Reboot the system to pick up the new hostname and time zone information in all services and applications
+```
 sudo reboot
+```
+
