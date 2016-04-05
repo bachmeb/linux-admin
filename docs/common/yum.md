@@ -219,7 +219,6 @@ Is this ok [y/N]: y
 ```
 ```c
 /*
-
 Downloading Packages:
 (1/73): libXcomposite-0.3-5.1.i386.rpm                   |  11 kB     00:00
 (2/73): libXcomposite-0.3-5.1.x86_64.rpm                 |  12 kB     00:00
