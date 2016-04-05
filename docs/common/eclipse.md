@@ -8,7 +8,7 @@
 ```
 sudo install eclipse-/*
 ```
-```
+```c
 /*
 Loaded plugins: product-id, security, subscription-manager
 Setting up Install Process
