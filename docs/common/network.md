@@ -1,21 +1,33 @@
 
 ##### Check the hostname 
-	hostname
+```
+hostname
+```
 
 ##### Check the DNS domain name
-	dnsdomainname
+```
+dnsdomainname
+```
 
 ##### Get the IP address of the internal name server
-	cat /etc/resolv.conf
+```
+cat /etc/resolv.conf
+```
 
 ##### Check the routing table
-	route
+```
+route
+```
 
 ##### Check the internal IP address
-	ifconfig
+```
+/sbin/ifconfig
+```
 
 ##### Check the external IP address
-	wget http://ipinfo.io/ip -qO -
+```
+wget http://ipinfo.io/ip -qO -
+```
 
 ##### Run a speed test (just for fun)
 ```
