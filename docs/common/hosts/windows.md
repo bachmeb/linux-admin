@@ -36,4 +36,12 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 ```
-Click File > Save to save your changes.
+
+##### Edit the hosts file
+*Add the correct IP address and hostname for the destination system.*
+```
+555.555.555.555   hostname
+```
+
+##### Save the changes
+* File > Save
