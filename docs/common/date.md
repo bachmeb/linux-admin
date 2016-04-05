@@ -16,3 +16,6 @@ UTC=false
 
 ##### Check the time
 	date
+
+##### Reboot the system to pick up the new time zone information in all services and applications
+	sudo reboot
