@@ -32,15 +32,3 @@
 ##### Go home
 	cd ~
 	pwd
-
-##### Change the command prompt to show your username at the fqdn
-	export PS1='[\u@\H \W]\$'
-
-##### Read your .bashrc file
-	cat .bashrc
-	
-##### Add the PS1 command to your .bashrc file
-	echo 'PS1="[\u@\H \W]\$ "'>>~/.bashrc
-
-##### Read your .bashrc file
-	cat .bashrc
