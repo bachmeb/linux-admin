@@ -217,3 +217,90 @@ Total download size: 272 M
 ```
 Is this ok [y/N]: y
 ```
+```c
+/*
+
+Downloading Packages:
+(1/73): libXcomposite-0.3-5.1.i386.rpm                   |  11 kB     00:00
+(2/73): libXcomposite-0.3-5.1.x86_64.rpm                 |  12 kB     00:00
+(3/73): irqbalance-0.55-16.el5_11.x86_64.rpm             |  21 kB     00:00
+(4/73): device-mapper-event-1.02.67-2.el5_11.1.x86_64.rp |  24 kB     00:00
+(5/73): libvolume_id-095-14.33.el5_11.x86_64.rpm         |  43 kB     00:00
+(6/73): libvolume_id-095-14.33.el5_11.i386.rpm           |  45 kB     00:00
+(7/73): at-3.1.8-84.el5_11.1.x86_64.rpm                  |  58 kB     00:00
+(8/73): redhat-release-5Server-5.11.0.3.x86_64.rpm       |  65 kB     00:00
+(9/73): rpm-python-4.4.2.3-36.el5_11.x86_64.rpm          |  65 kB     00:00
+(10/73): popt-1.10.2.3-36.el5_11.i386.rpm                |  77 kB     00:00
+(11/73): popt-1.10.2.3-36.el5_11.x86_64.rpm              |  79 kB     00:00
+(12/73): libgomp-4.4.7-11.el5_11.x86_64.rpm              |  86 kB     00:00
+(13/73): stunnel-4.15-2.el5.2.x86_64.rpm                 | 112 kB     00:00
+(14/73): nspr-4.10.8-2.el5_11.x86_64.rpm                 | 123 kB     00:00
+(15/73): nspr-4.10.8-2.el5_11.i386.rpm                   | 124 kB     00:00
+(16/73): dhcpv6-client-1.0.10-22.el5_11.x86_64.rpm       | 124 kB     00:00
+(17/73): subscription-manager-firstboot-1.11.3-14.el5_11 | 128 kB     00:00
+(18/73): setroubleshoot-2.0.5-7.el5_11.noarch.rpm        | 134 kB     00:00
+(19/73): procmail-3.22-17.1.2.x86_64.rpm                 | 171 kB     00:00
+(20/73): nscd-2.5-123.el5_11.3.x86_64.rpm                | 178 kB     00:00
+(21/73): bind-utils-9.3.6-25.P1.el5_11.8.x86_64.rpm      | 181 kB     00:00
+(22/73): cups-libs-1.3.7-32.el5_11.x86_64.rpm            | 197 kB     00:00
+(23/73): cups-libs-1.3.7-32.el5_11.i386.rpm              | 201 kB     00:00
+(24/73): libXfont-1.2.2-1.0.6.el5_11.x86_64.rpm          | 247 kB     00:00
+(25/73): openldap-2.3.43-29.el5_11.i386.rpm              | 298 kB     00:00
+(26/73): openldap-2.3.43-29.el5_11.x86_64.rpm            | 306 kB     00:00
+(27/73): rsync-3.0.6-6.el5_11.x86_64.rpm                 | 347 kB     00:00
+(28/73): nfs-utils-1.0.9-71.el5_11.x86_64.rpm            | 410 kB     00:00
+(29/73): kpartx-0.4.7-64.el5_11.x86_64.rpm               | 446 kB     00:00
+(30/73): subscription-manager-gui-1.11.3-14.el5_11.x86_6 | 545 kB     00:00
+(31/73): sendmail-8.13.8-10.el5_11.x86_64.rpm            | 638 kB     00:00
+(32/73): krb5-libs-1.6.1-80.el5_11.i386.rpm              | 670 kB     00:00
+(33/73): krb5-libs-1.6.1-80.el5_11.x86_64.rpm            | 683 kB     00:00
+(34/73): libxml2-python-2.6.26-2.1.25.el5_11.x86_64.rpm  | 715 kB     00:00
+(35/73): nss_db-2.2-38.el5_11.x86_64.rpm                 | 747 kB     00:00
+(36/73): nss_db-2.2-38.el5_11.i386.rpm                   | 759 kB     00:00
+(37/73): nss-tools-3.19.1-4.el5_11.x86_64.rpm            | 769 kB     00:00
+(38/73): tzdata-2016c-1.el5.x86_64.rpm                   | 774 kB     00:00
+(39/73): libxml2-2.6.26-2.1.25.el5_11.i386.rpm           | 799 kB     00:00
+(40/73): device-mapper-1.02.67-2.el5_11.1.i386.rpm       | 804 kB     00:00
+(41/73): libxml2-2.6.26-2.1.25.el5_11.x86_64.rpm         | 811 kB     00:00
+(42/73): device-mapper-1.02.67-2.el5_11.1.x86_64.rpm     | 832 kB     00:00
+(43/73): bind-libs-9.3.6-25.P1.el5_11.8.x86_64.rpm       | 901 kB     00:00
+(44/73): krb5-workstation-1.6.1-80.el5_11.x86_64.rpm     | 919 kB     00:00
+(45/73): rpm-libs-4.4.2.3-36.el5_11.x86_64.rpm           | 927 kB     00:00
+(46/73): pam-0.99.6.2-14.el5_11.x86_64.rpm               | 982 kB     00:00
+(47/73): pam-0.99.6.2-14.el5_11.i386.rpm                 | 983 kB     00:00
+(48/73): subscription-manager-1.11.3-14.el5_11.x86_64.rp | 1.1 MB     00:00
+(49/73): rpm-4.4.2.3-36.el5_11.x86_64.rpm                | 1.2 MB     00:00
+(50/73): setroubleshoot-server-2.0.5-7.el5_11.noarch.rpm | 1.2 MB     00:00
+(51/73): ksh-20100621-24.el5_11.x86_64.rpm               | 1.3 MB     00:00
+(52/73): nss-3.19.1-4.el5_11.i386.rpm                    | 1.3 MB     00:00
+(53/73): nss-3.19.1-4.el5_11.x86_64.rpm                  | 1.3 MB     00:00
+(54/73): net-snmp-libs-5.3.2.2-25.el5_11.x86_64.rpm      | 1.3 MB     00:00
+(55/73): ntp-4.2.2p1-18.el5_11.x86_64.rpm                | 1.3 MB     00:00
+(56/73): nss_ldap-253-52.el5_11.2.x86_64.rpm             | 1.4 MB     00:00
+(57/73): xorg-x11-server-Xnest-1.1.1-48.107.el5_11.x86_6 | 1.4 MB     00:00
+(58/73): nss_ldap-253-52.el5_11.2.i386.rpm               | 1.4 MB     00:00
+(59/73): openssl-0.9.8e-39.el5_11.i686.rpm               | 1.7 MB     00:00
+(60/73): openssl-0.9.8e-39.el5_11.x86_64.rpm             | 1.7 MB     00:00
+(61/73): bash-3.2-33.el5_11.4.x86_64.rpm                 | 1.8 MB     00:00
+(62/73): crash-5.1.8-3.el5_11.x86_64.rpm                 | 2.3 MB     00:01
+(63/73): udev-095-14.33.el5_11.x86_64.rpm                | 2.4 MB     00:01
+(64/73): device-mapper-multipath-0.4.7-64.el5_11.x86_64. | 3.0 MB     00:01
+(65/73): cups-1.3.7-32.el5_11.x86_64.rpm                 | 3.1 MB     00:01
+(66/73): xorg-x11-server-Xorg-1.1.1-48.107.el5_11.x86_64 | 3.4 MB     00:01
+(67/73): glibc-2.5-123.el5_11.3.x86_64.rpm               | 4.8 MB     00:01
+(68/73): glibc-2.5-123.el5_11.3.i686.rpm                 | 5.4 MB     00:02
+(69/73): perl-5.8.8-43.el5_11.x86_64.rpm                 |  12 MB     00:06
+(70/73): glibc-common-2.5-123.el5_11.3.x86_64.rpm        |  16 MB     00:06
+(71/73): kernel-2.6.18-409.el5.x86_64.rpm                |  22 MB     00:08
+(72/73): firefox-38.7.0-1.el5_11.i386.rpm                |  79 MB     00:29
+(73/73): firefox-38.7.0-1.el5_11.x86_64.rpm              |  80 MB     00:19
+--------------------------------------------------------------------------------
+Total                                           1.7 MB/s | 272 MB     02:36
+warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID 37017186
+rhel-5-server-rpms/gpgkey                                | 1.1 kB     00:00
+Importing GPG key 0x37017186 "Red Hat, Inc. (release key) <security@redhat.com>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+*/
+```
+```
+Is this ok [y/N]: y
+```
