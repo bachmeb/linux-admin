@@ -66,9 +66,7 @@ chmod +x speedtest_cli.py
 ```
 sudo nano /etc/sysconfig/network
 ```
-
-##### Set the HOSTNAME to be any name you would like for the virtual server
-```
+```bash
 HOSTNAME=[somehost].localdomain
 ```
 
