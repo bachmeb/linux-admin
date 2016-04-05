@@ -1,5 +1,8 @@
 
 
+##### Switch to super user
+	sudo su
+	
 ##### Check the default options configured for adding a user on this system
 	useradd -D
     
