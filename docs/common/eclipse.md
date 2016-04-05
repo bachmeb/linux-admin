@@ -3,6 +3,9 @@
 ## References
 * https://eclipse.org/downloads/
 * https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/1/html/User_Guide/chap-Eclipse.html
+* http://www.eclipse.org/eclipse/development/readme_eclipse_3.2.1.html
+* http://archive.eclipse.org/eclipse/downloads/index.php
+* http://archive.eclipse.org/eclipse/downloads/drops/R-3.2.1-200609210945/
 
 ##### Install all of the eclipse packages in yum
 ```
