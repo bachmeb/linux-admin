@@ -66,8 +66,8 @@ chmod +x speedtest_cli.py
 ```
 sudo nano /etc/sysconfig/network
 ```
-```bash
-HOSTNAME=[somehost].localdomain
+```
+HOSTNAME=[somehost]
 ```
 
 ##### Edit the hosts file
@@ -75,9 +75,7 @@ HOSTNAME=[somehost].localdomain
 sudo nano /etc/hosts
 ```
 ```c
-/*
 127.0.0.1  [somehost] [somehost].localdomain localhost localhost.localdomain
-*/
 ```
 
 ##### Reboot the system to pick up the new hostname and time zone information in all services and applications
@@ -85,3 +83,16 @@ sudo nano /etc/hosts
 sudo reboot
 ```
 
+##### Check the hostname 
+```
+hostname
+```
+##### Check the fully qualified domain name
+```
+hostname -f
+```
+
+##### Check the DNS domain name
+```
+dnsdomainname
+```
