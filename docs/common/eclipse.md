@@ -463,3 +463,16 @@ Dependency Installed:
 Complete!
 */
 ```
+
+##### See where is eclipse
+```
+whereis eclipse
+```
+```
+/usr/bin/eclipse
+```
+
+##### Launch eclipse
+```
+eclipse
+```
