@@ -26,7 +26,6 @@ sudo yum update
 ```
 ```c
 /*
-
 [sudo] password for bachmeb:
 Loaded plugins: product-id, security, subscription-manager
 rhel-5-server-cf-tools-1-rpms                            | 3.1 kB     00:00
