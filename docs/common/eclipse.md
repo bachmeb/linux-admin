@@ -479,6 +479,4 @@ eclipse
 
 ##### Check the version of eclipse
 * Help > About Eclipse
-```
-Version: 3.2.1
-```
+ * Version: 3.2.1
