@@ -303,3 +303,240 @@ Importing GPG key 0x37017186 "Red Hat, Inc. (release key) <security@redhat.com>"
 ```
 Is this ok [y/N]: y
 ```
+```c
+/*
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Updating       : tzdata                                                 1/143
+  Updating       : glibc-common                                           2/143
+  Updating       : glibc                                                  3/143
+  Updating       : bash                                                   4/143
+  Updating       : nspr                                                   5/143
+  Updating       : pam                                                    6/143
+  Updating       : krb5-libs                                              7/143
+  Updating       : openssl                                                8/143
+  Updating       : nss                                                    9/143
+  Updating       : popt                                                  10/143
+  Updating       : openldap                                              11/143
+  Updating       : device-mapper                                         12/143
+  Updating       : libXfont                                              13/143
+  Updating       : nscd                                                  14/143
+  Updating       : bind-libs                                             15/143
+  Updating       : cups-libs                                             16/143
+  Updating       : libxml2                                               17/143
+  Updating       : libxml2-python                                        18/143
+  Updating       : perl                                                  19/143
+  Updating       : procmail                                              20/143
+  Updating       : nss_ldap                                              21/143
+  Updating       : xorg-x11-server-Xorg                                  22/143
+  Updating       : kpartx                                                23/143
+  Updating       : net-snmp-libs                                         24/143
+  Updating       : subscription-manager                                  25/143
+  Updating       : subscription-manager-gui                              26/143
+  Updating       : libgomp                                               27/143
+  Updating       : libvolume_id                                          28/143
+  Updating       : nss_db                                                29/143
+  Installing     : libXcomposite                                         30/143
+  Updating       : device-mapper-multipath                               31/143
+  Updating       : sendmail                                              32/143
+  Updating       : stunnel                                               33/143
+  Updating       : cups                                                  34/143
+  Updating       : bind-utils                                            35/143
+  Updating       : xorg-x11-server-Xnest                                 36/143
+  Updating       : device-mapper-event                                   37/143
+  Updating       : rsync                                                 38/143
+  Updating       : nss-tools                                             39/143
+  Updating       : krb5-workstation                                      40/143
+  Updating       : nfs-utils                                             41/143
+  Updating       : at                                                    42/143
+  Updating       : udev                                                  43/143
+  Updating       : ksh                                                   44/143
+  Updating       : irqbalance                                            45/143
+  Updating       : crash                                                 46/143
+  Updating       : dhcpv6-client                                         47/143
+  Updating       : setroubleshoot-server                                 48/143
+  Updating       : setroubleshoot                                        49/143
+  Installing     : firefox                                               50/143
+  Updating       : subscription-manager-firstboot                        51/143
+  Updating       : ntp                                                   52/143
+  Installing     : kernel                                                53/143
+  Updating       : redhat-release                                        54/143
+  Updating       : glibc                                                 55/143
+  Updating       : nspr                                                  56/143
+  Updating       : krb5-libs                                             57/143
+  Updating       : openssl                                               58/143
+warning: /etc/pki/tls/certs/ca-bundle.crt created as /etc/pki/tls/certs/ca-bundle.crt.rpmnew
+  Updating       : openldap                                              59/143
+  Updating       : nss                                                   60/143
+  Updating       : pam                                                   61/143
+  Updating       : nss_ldap                                              62/143
+  Updating       : cups-libs                                             63/143
+  Updating       : device-mapper                                         64/143
+  Updating       : libxml2                                               65/143
+  Installing     : libXcomposite                                         66/143
+  Updating       : libvolume_id                                          67/143
+  Updating       : popt                                                  68/143
+  Updating       : nss_db                                                69/143
+  Installing     : firefox                                               70/143
+  Updating       : rpm-libs                                              71/143
+  Updating       : rpm                                                   72/143
+  Updating       : rpm-python                                            73/143
+  Cleanup        : nspr                                                  74/143
+  Cleanup        : device-mapper                                         75/143
+  Cleanup        : sendmail                                              76/143
+  Cleanup        : bind-utils                                            77/143
+  Cleanup        : nss_ldap                                              78/143
+  Cleanup        : libxml2                                               79/143
+  Cleanup        : crash                                                 80/143
+  Cleanup        : krb5-libs                                             81/143
+  Cleanup        : subscription-manager                                  82/143
+  Cleanup        : glibc-common                                          83/143
+  Cleanup        : cups                                                  84/143
+  Cleanup        : nss                                                   85/143
+  Cleanup        : krb5-workstation                                      86/143
+  Cleanup        : libvolume_id                                          87/143
+  Cleanup        : firefox                                               88/143
+  Cleanup        : firefox                                               89/143
+  Cleanup        : net-snmp-libs                                         90/143
+  Cleanup        : xorg-x11-server-Xnest                                 91/143
+  Cleanup        : popt                                                  92/143
+  Cleanup        : ksh                                                   93/143
+  Cleanup        : openldap                                              94/143
+  Cleanup        : pam                                                   95/143
+  Cleanup        : xorg-x11-server-Xorg                                  96/143
+  Cleanup        : libXfont                                              97/143
+  Cleanup        : subscription-manager-gui                              98/143
+  Cleanup        : nscd                                                  99/143
+  Cleanup        : glibc                                                100/143
+  Cleanup        : libvolume_id                                         101/143
+  Cleanup        : libxml2-python                                       102/143
+  Cleanup        : procmail                                             103/143
+  Cleanup        : openssl                                              104/143
+  Cleanup        : setroubleshoot-server                                105/143
+  Cleanup        : setroubleshoot                                       106/143
+  Cleanup        : perl                                                 107/143
+  Cleanup        : rpm                                                  108/143
+  Cleanup        : libgomp                                              109/143
+  Cleanup        : nspr                                                 110/143
+  Cleanup        : krb5-libs                                            111/143
+  Cleanup        : openldap                                             112/143
+  Cleanup        : nss                                                  113/143
+  Cleanup        : nss_db                                               114/143
+  Cleanup        : bash                                                 115/143
+  Cleanup        : pam                                                  116/143
+  Cleanup        : nfs-utils                                            117/143
+  Cleanup        : device-mapper-event                                  118/143
+  Cleanup        : dhcpv6-client                                        119/143
+  Cleanup        : kpartx                                               120/143
+  Cleanup        : openssl                                              121/143
+  Cleanup        : nss_db                                               122/143
+  Cleanup        : glibc                                                123/143
+  Cleanup        : irqbalance                                           124/143
+  Cleanup        : cups-libs                                            125/143
+  Cleanup        : redhat-release                                       126/143
+  Cleanup        : device-mapper-multipath                              127/143
+  Cleanup        : nss_ldap                                             128/143
+  Cleanup        : nss-tools                                            129/143
+  Cleanup        : tzdata                                               130/143
+  Cleanup        : subscription-manager-firstboot                       131/143
+  Cleanup        : cups-libs                                            132/143
+  Cleanup        : popt                                                 133/143
+  Cleanup        : libxml2                                              134/143
+  Cleanup        : rsync                                                135/143
+  Cleanup        : bind-libs                                            136/143
+  Cleanup        : at                                                   137/143
+  Cleanup        : device-mapper                                        138/143
+  Cleanup        : rpm-python                                           139/143
+  Cleanup        : rpm-libs                                             140/143
+  Cleanup        : stunnel                                              141/143
+  Cleanup        : udev                                                 142/143
+  Cleanup        : ntp                                                  143/143
+rhel-5-server-cf-tools-1-rpms/productid                  | 1.7 kB     00:00
+rhel-5-server-rpms/productid                             | 1.7 kB     00:00
+
+Installed:
+  firefox.i386 0:38.7.0-1.el5_11        firefox.x86_64 0:38.7.0-1.el5_11
+  kernel.x86_64 0:2.6.18-409.el5
+
+Dependency Installed:
+  libXcomposite.i386 0:0.3-5.1          libXcomposite.x86_64 0:0.3-5.1
+
+Updated:
+  at.x86_64 0:3.1.8-84.el5_11.1
+  bash.x86_64 0:3.2-33.el5_11.4
+  bind-libs.x86_64 30:9.3.6-25.P1.el5_11.8
+  bind-utils.x86_64 30:9.3.6-25.P1.el5_11.8
+  crash.x86_64 0:5.1.8-3.el5_11
+  cups.x86_64 1:1.3.7-32.el5_11
+  cups-libs.i386 1:1.3.7-32.el5_11
+  cups-libs.x86_64 1:1.3.7-32.el5_11
+  device-mapper.i386 0:1.02.67-2.el5_11.1
+  device-mapper.x86_64 0:1.02.67-2.el5_11.1
+  device-mapper-event.x86_64 0:1.02.67-2.el5_11.1
+  device-mapper-multipath.x86_64 0:0.4.7-64.el5_11
+  dhcpv6-client.x86_64 0:1.0.10-22.el5_11
+  glibc.i686 0:2.5-123.el5_11.3
+  glibc.x86_64 0:2.5-123.el5_11.3
+  glibc-common.x86_64 0:2.5-123.el5_11.3
+  irqbalance.x86_64 2:0.55-16.el5_11
+  kpartx.x86_64 0:0.4.7-64.el5_11
+  krb5-libs.i386 0:1.6.1-80.el5_11
+  krb5-libs.x86_64 0:1.6.1-80.el5_11
+  krb5-workstation.x86_64 0:1.6.1-80.el5_11
+  ksh.x86_64 0:20100621-24.el5_11
+  libXfont.x86_64 0:1.2.2-1.0.6.el5_11
+  libgomp.x86_64 0:4.4.7-11.el5_11
+  libvolume_id.i386 0:095-14.33.el5_11
+  libvolume_id.x86_64 0:095-14.33.el5_11
+  libxml2.i386 0:2.6.26-2.1.25.el5_11
+  libxml2.x86_64 0:2.6.26-2.1.25.el5_11
+  libxml2-python.x86_64 0:2.6.26-2.1.25.el5_11
+  net-snmp-libs.x86_64 1:5.3.2.2-25.el5_11
+  nfs-utils.x86_64 1:1.0.9-71.el5_11
+  nscd.x86_64 0:2.5-123.el5_11.3
+  nspr.i386 0:4.10.8-2.el5_11
+  nspr.x86_64 0:4.10.8-2.el5_11
+  nss.i386 0:3.19.1-4.el5_11
+  nss.x86_64 0:3.19.1-4.el5_11
+  nss-tools.x86_64 0:3.19.1-4.el5_11
+  nss_db.i386 0:2.2-38.el5_11
+  nss_db.x86_64 0:2.2-38.el5_11
+  nss_ldap.i386 0:253-52.el5_11.2
+  nss_ldap.x86_64 0:253-52.el5_11.2
+  ntp.x86_64 0:4.2.2p1-18.el5_11
+  openldap.i386 0:2.3.43-29.el5_11
+  openldap.x86_64 0:2.3.43-29.el5_11
+  openssl.i686 0:0.9.8e-39.el5_11
+  openssl.x86_64 0:0.9.8e-39.el5_11
+  pam.i386 0:0.99.6.2-14.el5_11
+  pam.x86_64 0:0.99.6.2-14.el5_11
+  perl.x86_64 4:5.8.8-43.el5_11
+  popt.i386 0:1.10.2.3-36.el5_11
+  popt.x86_64 0:1.10.2.3-36.el5_11
+  procmail.x86_64 0:3.22-17.1.2
+  redhat-release.x86_64 0:5Server-5.11.0.3
+  rpm.x86_64 0:4.4.2.3-36.el5_11
+  rpm-libs.x86_64 0:4.4.2.3-36.el5_11
+  rpm-python.x86_64 0:4.4.2.3-36.el5_11
+  rsync.x86_64 0:3.0.6-6.el5_11
+  sendmail.x86_64 0:8.13.8-10.el5_11
+  setroubleshoot.noarch 0:2.0.5-7.el5_11
+  setroubleshoot-server.noarch 0:2.0.5-7.el5_11
+  stunnel.x86_64 0:4.15-2.el5.2
+  subscription-manager.x86_64 0:1.11.3-14.el5_11
+  subscription-manager-firstboot.x86_64 0:1.11.3-14.el5_11
+  subscription-manager-gui.x86_64 0:1.11.3-14.el5_11
+  tzdata.x86_64 0:2016c-1.el5
+  udev.x86_64 0:095-14.33.el5_11
+  xorg-x11-server-Xnest.x86_64 0:1.1.1-48.107.el5_11
+  xorg-x11-server-Xorg.x86_64 0:1.1.1-48.107.el5_11
+
+Replaced:
+  firefox.i386 0:24.7.0-1.el5_10        firefox.x86_64 0:24.7.0-1.el5_10
+
+Complete!
+*/
+```
