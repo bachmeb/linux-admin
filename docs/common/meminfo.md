@@ -1,7 +1,7 @@
 # meminfo
 
 ## References
-* 
+* http://www.cyberciti.biz/faq/linux-system-memory-utilization/
 
 ```
 cat /proc/meminfo
