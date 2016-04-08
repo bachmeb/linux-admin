@@ -1,5 +1,6 @@
-# linux-install
+# linux-admin
 
+Installation, configuration, and administration of the Linux operating system. 
 
 ##### Red Hat Enterprise Linux
 * 5.11
