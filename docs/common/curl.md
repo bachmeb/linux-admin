@@ -65,5 +65,45 @@ Is this ok [y/N]: y
 ```
 ```c
 /*
+Downloading Packages:
+(1/9): keyutils-libs-devel-1.2-1.el5.x86_64.rpm          |  27 kB     00:00
+(2/9): libselinux-devel-1.33.4-5.7.el5.x86_64.rpm        | 149 kB     00:00
+(3/9): libsepol-devel-1.15.2-3.el5.x86_64.rpm            | 192 kB     00:00
+(4/9): libidn-devel-0.6.5-1.1.x86_64.rpm                 | 240 kB     00:00
+(5/9): curl-devel-7.15.5-17.el5_9.i386.rpm               | 310 kB     00:00
+(6/9): curl-devel-7.15.5-17.el5_9.x86_64.rpm             | 319 kB     00:00
+(7/9): e2fsprogs-devel-1.39-37.el5.x86_64.rpm            | 639 kB     00:00
+(8/9): openssl-devel-0.9.8e-39.el5_11.x86_64.rpm         | 1.9 MB     00:01
+(9/9): krb5-devel-1.6.1-80.el5_11.x86_64.rpm             | 1.9 MB     00:00
+--------------------------------------------------------------------------------
+Total                                           818 kB/s | 5.6 MB     00:06
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : libidn-devel                                             1/9
+  Installing     : e2fsprogs-devel                                          2/9
+  Installing     : keyutils-libs-devel                                      3/9
+  Installing     : libsepol-devel                                           4/9
+  Installing     : libselinux-devel                                         5/9
+  Installing     : krb5-devel                                               6/9
+  Installing     : openssl-devel                                            7/9
+  Installing     : curl-devel                                               8/9
+  Installing     : curl-devel                                               9/9
+
+Installed:
+  curl-devel.i386 0:7.15.5-17.el5_9     curl-devel.x86_64 0:7.15.5-17.el5_9
+
+Dependency Installed:
+  e2fsprogs-devel.x86_64 0:1.39-37.el5
+  keyutils-libs-devel.x86_64 0:1.2-1.el5
+  krb5-devel.x86_64 0:1.6.1-80.el5_11
+  libidn-devel.x86_64 0:0.6.5-1.1
+  libselinux-devel.x86_64 0:1.33.4-5.7.el5
+  libsepol-devel.x86_64 0:1.15.2-3.el5
+  openssl-devel.x86_64 0:0.9.8e-39.el5_11
+
+Complete!
 */
 ```
