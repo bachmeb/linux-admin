@@ -9,6 +9,7 @@
 sudo yum install gcc
 ```
 ```c
+/*
 Loaded plugins: product-id, security, subscription-manager
 Setting up Install Process
 Resolving Dependencies
