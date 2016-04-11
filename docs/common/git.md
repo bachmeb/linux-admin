@@ -6,6 +6,89 @@
 ##### Install gcc
 * [gcc](/docs/common/gcc.md)
 
+##### Search yum for zlib
+```
+sudo yum search zlib
+```
+```c
+/*
+Loaded plugins: product-id, security, subscription-manager
+================================ Matched: zlib =================================
+perl-Archive-Tar.noarch : A module for Perl manipulation of .tar files
+iptstate.x86_64 : A top-like display of IP Tables state table entries
+jzlib.x86_64 : JZlib re-implementation of zlib in pure Java
+jzlib-demo.x86_64 : Examples for jzlib
+jzlib-javadoc.x86_64 : Javadoc for jzlib
+minizip.i386 : Minizip manipulates files from a .zip archive
+minizip.x86_64 : Minizip manipulates files from a .zip archive
+minizip-devel.i386 : Development files for the minizip library
+minizip-devel.x86_64 : Development files for the minizip library
+perl-Compress-Zlib.x86_64 : A module providing Perl interfaces to the zlib
+                          : compression library.
+perl-IO-Zlib.noarch : Perl IO:: style interface to Compress::Zlib
+zlib.i386 : The zlib compression and decompression library.
+zlib.x86_64 : The zlib compression and decompression library.
+zlib-devel.i386 : Header files and libraries for Zlib development.
+zlib-devel.x86_64 : Header files and libraries for Zlib development.
+*/
+```
+
+##### Install zlib-devel
+```
+sudo yum install zlib-devel
+```
+```c
+/*
+
+Loaded plugins: product-id, security, subscription-manager
+Setting up Install Process
+Resolving Dependencies
+--> Running transaction check
+---> Package zlib-devel.i386 0:1.2.3-7.el5 set to be updated
+---> Package zlib-devel.x86_64 0:1.2.3-7.el5 set to be updated
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch         Version           Repository                Size
+================================================================================
+Installing:
+ zlib-devel       i386         1.2.3-7.el5       rhel-5-server-rpms       102 k
+ zlib-devel       x86_64       1.2.3-7.el5       rhel-5-server-rpms       103 k
+
+Transaction Summary
+================================================================================
+Install       2 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 205 k
+*/
+```
+```
+Is this ok [y/N]: y
+```
+```c
+/*
+Downloading Packages:
+(1/2): zlib-devel-1.2.3-7.el5.i386.rpm                   | 102 kB     00:00
+(2/2): zlib-devel-1.2.3-7.el5.x86_64.rpm                 | 103 kB     00:00
+--------------------------------------------------------------------------------
+Total                                           169 kB/s | 205 kB     00:01
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : zlib-devel                                               1/2
+  Installing     : zlib-devel                                               2/2
+
+Installed:
+  zlib-devel.i386 0:1.2.3-7.el5         zlib-devel.x86_64 0:1.2.3-7.el5
+
+Complete!
+*/
+```
 ##### Get a link to download git
 * https://git-scm.com/
 * https://www.kernel.org/pub/software/scm/git/
