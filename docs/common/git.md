@@ -1093,3 +1093,23 @@ bindir=$(cd '/usr/local/bin' && pwd) && \
         done && \
         ./check_bindir "z$bindir" "z$execdir" "$bindir/git-add"
 ```
+
+##### See where git was installed
+```
+whereis git
+```
+```c
+/*
+git: /usr/local/bin/git
+*/
+```
+
+##### Check the git version
+```
+git --version
+```
+```c
+/*
+git version 2.8.1
+*/
+```
