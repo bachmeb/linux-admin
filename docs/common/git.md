@@ -2,7 +2,9 @@
 
 ## References
 * https://www.digitalocean.com/community/tutorials/how-to-install-git-on-centos-7
+* http://stackoverflow.com/questions/8329485/git-clone-fatal-unable-to-find-remote-helper-for-https
 
+### Install
 ##### Get a link to download git
 * https://git-scm.com/
 * https://www.kernel.org/pub/software/scm/git/
@@ -1112,4 +1114,25 @@ git --version
 /*
 git version 2.8.1
 */
+```
+
+### Configure
+```
+git config -l
+```
+```
+git config user.email [YOUR EMAIL ADDRESS]
+git config user.name [YOUR USER NAME]
+```
+```
+git remote add origin http://github.com/[username]/[repo].git
+```
+```
+git remote -v
+```
+```
+git pull origin master
+```
+```
+git branch --set-upstream-to=origin/master master
 ```
