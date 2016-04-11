@@ -23,6 +23,9 @@ tar -xvf git-2.8.1.tar.gz
 ##### Install gcc
 * [gcc](/docs/common/gcc.md)
 
+##### Install curl
+* [curl](/docs/common/curl.md)
+
 ##### Configure the installation
 ```
 cd git-2.8.1
@@ -74,12 +77,13 @@ checking for diff... diff
 checking for asciidoc... no
 Using 'grep -a' for sane_grep
 configure: CHECKS for libraries
-checking for SHA1_Init in -lcrypto... no
-checking for SHA1_Init in -lssl... no
-checking for curl_global_init in -lcurl... no
+checking for SHA1_Init in -lcrypto... yes
+checking for curl_global_init in -lcurl... yes
+checking for Curl_ssl_init in -lcurl... yes
+checking for curl-config... curl-config
 checking for XML_ParserCreate in -lexpat... no
 checking for iconv in -lc... yes
-checking for deflateBound in -lz... no
+checking for deflateBound in -lz... yes
 checking for socket in -lc... yes
 checking for inet_ntop... yes
 checking for inet_pton... yes
@@ -126,7 +130,7 @@ checking for libcharset.h... no
 checking for strings.h... (cached) yes
 checking for locale_charset in -liconv... no
 checking for locale_charset in -lcharset... no
-checking for HMAC_CTX_cleanup in -lcrypto... no
+checking for HMAC_CTX_cleanup in -lcrypto... yes
 checking for clock_gettime... no
 checking for CLOCK_MONOTONIC... yes
 checking for setitimer... yes
@@ -248,6 +252,8 @@ make
 ```
 ```c
 /*
+GIT_VERSION = 2.8.1
+    * new build flags
     CC credential-store.o
     * new link flags
     CC abspath.o
@@ -411,7 +417,6 @@ make
     CC xdiff-interface.o
     CC zlib.o
     CC unix-socket.o
-    CC block-sha1/sha1.o
     CC thread-utils.o
     CC compat/strlcpy.o
     AR libgit.a
@@ -449,10 +454,19 @@ make
     CC vcs-svn/svndump.o
     AR vcs-svn/lib.a
     LINK git-remote-testsvn
+    CC http.o
+    CC http-walker.o
+    CC http-fetch.o
+    LINK git-http-fetch
     CC credential-cache.o
     LINK git-credential-cache
     CC credential-cache--daemon.o
     LINK git-credential-cache--daemon
+    CC remote-curl.o
+    LINK git-remote-http
+    LN/CP git-remote-https
+    LN/CP git-remote-ftp
+    LN/CP git-remote-ftps
     * new script parameters
     GEN git-bisect
     GEN git-difftool--helper
@@ -929,13 +943,26 @@ Manifying blib/man3/Git.3pm
 sudo make install
 ```
 ```c
+    SUBDIR perl
+/usr/bin/perl Makefile.PL PREFIX='/usr/local' INSTALL_BASE='' --localedir='/usr/local/share/locale'
+'INSTALL_BASE' is not a known MakeMaker parameter name.
+Writing perl.mak for Git
+    GEN git-add--interactive
+    GEN git-difftool
+    GEN git-archimport
+    GEN git-cvsexportcommit
+    GEN git-cvsimport
+    GEN git-cvsserver
+    GEN git-relink
+    GEN git-send-email
+    GEN git-svn
     SUBDIR git-gui
     SUBDIR gitk-git
     SUBDIR perl
     SUBDIR templates
 install -d -m 755 '/usr/local/bin'
 install -d -m 755 '/usr/local/libexec/git-core'
-install   git-credential-store git-daemon git-fast-import git-http-backend git-imap-send git-sh-i18n--envsubst git-shell git-show-index git-upload-pack git-remote-testsvn git-credential-cache git-credential-cache--daemon git-bisect git-difftool--helper git-filter-branch git-merge-octopus git-merge-one-file git-merge-resolve git-mergetool git-quiltimport git-rebase git-request-pull git-stash git-submodule git-web--browse git-add--interactive git-difftool git-archimport git-cvsexportcommit git-cvsimport git-cvsserver git-relink git-send-email git-svn git-p4 git-instaweb '/usr/local/libexec/git-core'
+install   git-credential-store git-daemon git-fast-import git-http-backend git-imap-send git-sh-i18n--envsubst git-shell git-show-index git-upload-pack git-remote-testsvn git-http-fetch git-credential-cache git-credential-cache--daemon git-remote-http git-remote-https git-remote-ftp git-remote-ftps git-bisect git-difftool--helper git-filter-branch git-merge-octopus git-merge-one-file git-merge-resolve git-mergetool git-quiltimport git-rebase git-request-pull git-stash git-submodule git-web--browse git-add--interactive git-difftool git-archimport git-cvsexportcommit git-cvsimport git-cvsserver git-relink git-send-email git-svn git-p4 git-instaweb '/usr/local/libexec/git-core'
 install -m 644  git-mergetool--lib git-parse-remote git-rebase--am git-rebase--interactive git-rebase--merge git-sh-setup git-sh-i18n '/usr/local/libexec/git-core'
 install git git-upload-pack git-receive-pack git-upload-archive git-shell git-cvsserver '/usr/local/bin'
 make -C templates DESTDIR='' install
@@ -952,29 +979,6 @@ install -d -m 755 '/usr/local/share/locale'
 make -C perl prefix='/usr/local' DESTDIR='' install
 make[1]: Entering directory `/home/bachmeb/Downloads/git-2.8.1/perl'
 make[2]: Entering directory `/home/bachmeb/Downloads/git-2.8.1/perl'
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Error.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/IndexInfo.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/I18N.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Prompt.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Migration.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Editor.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/GlobSpec.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Log.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Utils.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Ra.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Fetcher.pm
-Installing /usr/local/lib/perl5/site_perl/5.8.8/Git/SVN/Memoize/YAML.pm
-Installing /usr/local/share/man/man3/Git::SVN::Fetcher.3pm
-Installing /usr/local/share/man/man3/Git::SVN::Prompt.3pm
-Installing /usr/local/share/man/man3/private-Error.3pm
-Installing /usr/local/share/man/man3/Git.3pm
-Installing /usr/local/share/man/man3/Git::SVN::Editor.3pm
-Installing /usr/local/share/man/man3/Git::SVN::Utils.3pm
-Installing /usr/local/share/man/man3/Git::SVN::Ra.3pm
-Installing /usr/local/share/man/man3/Git::SVN::Memoize::YAML.3pm
-Installing /usr/local/share/man/man3/Git::I18N.3pm
 Writing /usr/local/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/auto/Git/.packlist
 Appending installation info to /usr/local/lib64/perl5/5.8.8/x86_64-linux-thread-multi/perllocal.pod
 make[2]: Leaving directory `/home/bachmeb/Downloads/git-2.8.1/perl'
@@ -1085,7 +1089,7 @@ bindir=$(cd '/usr/local/bin' && pwd) && \
                 ln -s "git" "$execdir/$p" 2>/dev/null || \
                 cp "$execdir/git" "$execdir/$p" || exit; \
         done && \
-        remote_curl_aliases="" && \
+        remote_curl_aliases="git-remote-https git-remote-ftp git-remote-ftps" && \
         for p in $remote_curl_aliases; do \
                 rm -f "$execdir/$p" && \
                 test -z "" && \
@@ -1117,22 +1121,32 @@ git version 2.8.1
 ```
 
 ### Configure
+##### List git config settings
 ```
 git config -l
 ```
+##### Configure username and email
 ```
 git config user.email [YOUR EMAIL ADDRESS]
 git config user.name [YOUR USER NAME]
 ```
+##### Add remote
 ```
 git remote add origin http://github.com/[username]/[repo].git
 ```
+##### List remote URLs
 ```
 git remote -v
 ```
+##### Pull from origin to master branch
 ```
 git pull origin master
 ```
+##### Set master upstream to origin/master
 ```
 git branch --set-upstream-to=origin/master master
+```
+##### Pull
+```
+git pull
 ```
