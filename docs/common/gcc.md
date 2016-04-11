@@ -52,6 +52,7 @@ Total download size: 9.8 M
 Is this ok [y/N]: y
 ```
 ```c
+/*
 Downloading Packages:
 (1/4): glibc-headers-2.5-123.el5_11.3.x86_64.rpm         | 602 kB     00:00
 (2/4): kernel-headers-2.6.18-409.el5.x86_64.rpm          | 1.5 MB     00:00
@@ -78,4 +79,5 @@ Dependency Installed:
   kernel-headers.x86_64 0:2.6.18-409.el5
 
 Complete!
+*/
 ```
