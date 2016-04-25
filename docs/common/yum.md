@@ -540,3 +540,16 @@ Replaced:
 Complete!
 */
 ```
+
+##### List all repos
+```
+yum repolist all
+```
+```c
+/*
+Loaded plugins: product-id, security, subscription-manager
+repo id           repo name                                             status
+rhel-debuginfo    Red Hat Enterprise Linux 5Server - x86_64 - Debug     disabled
+repolist: 0
+*/
+```
