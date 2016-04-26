@@ -1,0 +1,13 @@
+# redhat-release
+
+## References
+* 
+
+```
+cat /etc/redhat-release
+```
+```c
+/*
+Red Hat Enterprise Linux Server release 6.7 (Santiago)
+*/
+```
