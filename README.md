@@ -2,6 +2,9 @@
 
 Installation, configuration, and administration of the Linux operating system. 
 
+##### Common commands
+* [common](/docs/common)
+
 ##### Red Hat Enterprise Linux
 * 5.11
   * [x64](/docs/rhel/5.11/x64.md)
