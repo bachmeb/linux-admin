@@ -3,6 +3,7 @@
 ## References
 * https://access.redhat.com/solutions/253273
 * https://access.redhat.com/solutions/1213413
+* http://www.tuxradar.com/answers/440
 
 ##### Register the system with Red Hat Subscription Management
 ```
@@ -552,4 +553,32 @@ repo id           repo name                                             status
 rhel-debuginfo    Red Hat Enterprise Linux 5Server - x86_64 - Debug     disabled
 repolist: 0
 */
+```
+
+### Configure yum to use the CentOS repo
+##### Edit yum.conf
+```
+sudo nano /etc/yum.conf
+```
+
+##### For CentOS 5, add these lines
+```
+[CentOS5 base]
+name=CentOS-5-Base
+mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=os
+gpgcheck=1
+enabled=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+[CentOS5 updates]
+name=CentOS-5-Updates
+mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=updates
+gpgcheck=1
+enabled=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+[CentOS5plus]
+name=CentOS-5-Plus
+mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=centosplus
+gpgcheck=1
+enabled=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
 ```
