@@ -5,5 +5,5 @@
 
 ##### List Open Files For Process
 ```
-ps -aef | grep {process-name}
+ps aux | grep {program-name}
 ```
