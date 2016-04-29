@@ -4,6 +4,7 @@
 * https://access.redhat.com/solutions/253273
 * https://access.redhat.com/solutions/1213413
 * http://www.tuxradar.com/answers/440
+* https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf
 
 ##### Register the system with Red Hat Subscription Management
 ```
@@ -581,4 +582,9 @@ mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=centosplu
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+```
+
+##### List installed packages
+```
+yum list installed
 ```
