@@ -1,0 +1,9 @@
+# kill
+
+## References
+* http://linuxcommand.org/man_pages/kill1.html
+
+##### Kill process
+```
+kill pid
+```
