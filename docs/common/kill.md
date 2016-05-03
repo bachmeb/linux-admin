@@ -7,3 +7,8 @@
 ```
 kill pid
 ```
+
+##### Really kill process
+```
+kill -9 pid
+```
