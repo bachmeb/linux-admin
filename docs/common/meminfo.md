@@ -4,6 +4,7 @@
 * http://www.cyberciti.biz/faq/linux-system-memory-utilization/
 * https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s2-proc-meminfo.html
 * https://github.com/torvalds/linux/blob/master/Documentation/filesystems/proc.txt
+* https://access.redhat.com/solutions/205993
 
 ```
 cat /proc/meminfo
