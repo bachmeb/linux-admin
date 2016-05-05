@@ -48,24 +48,41 @@ sudo nano /etc/yum.conf
 
 ##### For CentOS 5, add these lines
 ```
-[CentOS5 base]
+[CentOS5Base]
 name=CentOS-5-Base
 mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=os
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
-[CentOS5 updates]
+[CentOS5Updates]
 name=CentOS-5-Updates
 mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=updates
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
-[CentOS5plus]
+[CentOS5Plus]
 name=CentOS-5-Plus
 mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=centosplus
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+```
+
+##### List all repos
+```
+sudo yum repolist all
+```
+```
+/*
+Loaded plugins: product-id, security, subscription-manager
+This system is registered to Red Hat Subscription Management, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+CentOS5Base                                              | 1.1 kB     00:00
+CentOS5Base/primary                                      | 1.3 MB     00:00
+CentOS5Plus                                              | 1.9 kB     00:00
+CentOS5Plus/primary_db                                   |  91 kB     00:00
+CentOS5Updates                                           | 1.9 kB     00:00
+CentOS5Updates/primary_db                                | 735 kB     00:01
+*/
 ```
 
 ##### List installed packages
