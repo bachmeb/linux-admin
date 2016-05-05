@@ -26,8 +26,8 @@ Status:       Subscribed
 ```
 sudo yum update
 ```
+<!---
 ```c
-<!--
 /*
 [sudo] password for bachmeb:
 Loaded plugins: product-id, security, subscription-manager
@@ -541,9 +541,9 @@ Replaced:
   firefox.i386 0:24.7.0-1.el5_10        firefox.x86_64 0:24.7.0-1.el5_10
 
 Complete!
--->
 */
 ```
+-->
 
 ##### List all repos
 ```
