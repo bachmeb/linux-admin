@@ -5,6 +5,7 @@
 * https://access.redhat.com/solutions/1213413
 * http://www.tuxradar.com/answers/440
 * https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf
+* https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/disable-repos.html
 
 ##### Register the system with Red Hat Subscription Management
 ```
@@ -88,4 +89,9 @@ CentOS5Updates/primary_db                                | 735 kB     00:01
 ##### List installed packages
 ```
 yum list installed
+```
+
+##### Disable the Red Hat Subscription Manager repo
+```
+subscription-manager config --rhsm.manage_repos=0
 ```
