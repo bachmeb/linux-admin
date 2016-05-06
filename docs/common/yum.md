@@ -6,6 +6,7 @@
 * http://www.tuxradar.com/answers/440
 * https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf
 * https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/disable-repos.html
+* https://www.centos.org/forums/viewtopic.php?t=9554
 
 ##### Register the system with Red Hat Subscription Management
 ```
