@@ -1,7 +1,8 @@
 # subscription-manager
 
 ## References
-* 
+* https://access.redhat.com/solutions/253273
+* https://access.redhat.com/solutions/265523
 
 ##### --help
 ```c
@@ -46,4 +47,11 @@ Other Modules:
   unsubscribe    Deprecated, see remove
   version        Print version information
 */
+```
+
+* *When a system is registered using Subscription-Manager, the rhsmcertd process creates a special yum repository — redhat.repo. As “Enabling Supplementary and Optional Repositories” describes, as the system adds subscriptions, the product channels are added to the redhat.repo file. Maintaining a redhat.repo file may not be desirable in some environments. It can create static in content management operations if that repository is not the one actually used for subscriptions, such as for a disconnected system or a system using a local content mirror. This default redhat.repo repository can be disabled by editing the Subscription-Manager configuration and setting the manage_repos value to zero (0).* (https://access.redhat.com/solutions/265523)
+
+##### Disable the default redhat.repo repository
+```
+sudo subscription-manager config --rhsm.manage_repos=0
 ```
