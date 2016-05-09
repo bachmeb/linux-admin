@@ -84,4 +84,95 @@ Upgrade       5 Package(s)
 
 Total download size: 8.7 M
 Is this ok [y/N]: y
+
+Downloading Packages:
+(1/6): launchmail-4.0.0-2.el5.noarch.rpm                 | 4.2 kB     00:00
+(2/6): rhgb-0.16.4-8.el5.centos.3.x86_64.rpm             | 161 kB     00:00
+(3/6): pirut-1.3.28-20.el5.centos.noarch.rpm             | 352 kB     00:01
+(4/6): firstboot-1.4.27.9-1.el5.centos.x86_64.rpm        | 377 kB     00:02
+(5/6): system-config-date-1.8.12-5.el5.centos.noarch.rpm | 1.5 MB     00:03
+(6/6): desktop-backgrounds-basic-2.0-41.el5.centos.noarc | 6.4 MB     00:06
+--------------------------------------------------------------------------------
+Total                                           585 kB/s | 8.7 MB     00:15
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+
+
+Transaction Check Error:
+  file /usr/share/locale/af/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/am/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ar/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/as/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/be/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/bg/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/bn/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/bn_IN/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ca/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/cs/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/cy/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/da/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/de/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/el/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/en_GB/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/es/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/et/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/fa/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/fi/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/fr/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/gu/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/he/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/hi/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/hr/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/hy/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/id/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ilo/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/is/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/it/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ja/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/kn/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ko/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/lt/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/lv/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/mk/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ml/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/mr/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ms/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/nb/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/nl/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/no/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/nso/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/or/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/pa/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/pl/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/pt/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/pt_BR/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ro/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ru/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/si/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/sk/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/sl/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/sr/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/sr@Latn/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/sv/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ta/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/te/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/th/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/tr/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/uk/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/ur/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/vi/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/zh_CN/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/zh_TW/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/locale/zu/LC_MESSAGES/firstboot.mo from install of firstboot-1.4.27.9-1.el5.centos.x86_64 conflicts with file from package firstboot-tui-1.4.27.9-1.el5.x86_64
+  file /usr/share/backgrounds/images/default-5_4.jpg from install of desktop-backgrounds-basic-2.0-41.el5.centos.noarch conflicts with file from package redhat-logos-4.9.16-1.noarch
+  file /usr/share/backgrounds/images/default-dual-wide.jpg from install of desktop-backgrounds-basic-2.0-41.el5.centos.noarch conflicts with file from package redhat-logos-4.9.16-1.noarch
+  file /usr/share/backgrounds/images/default-dual.jpg from install of desktop-backgrounds-basic-2.0-41.el5.centos.noarch conflicts with file from package redhat-logos-4.9.16-1.noarch
+  file /usr/share/backgrounds/images/default-wide.jpg from install of desktop-backgrounds-basic-2.0-41.el5.centos.noarch conflicts with file from package redhat-logos-4.9.16-1.noarch
+  file /usr/share/backgrounds/images/default.jpg from install of desktop-backgrounds-basic-2.0-41.el5.centos.noarch conflicts with file from package redhat-logos-4.9.16-1.noarch
+
+Error Summary
+-------------
+
+
 */
