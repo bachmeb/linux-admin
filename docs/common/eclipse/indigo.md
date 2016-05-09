@@ -8,4 +8,20 @@
 ##### Download Eclipse IDE for Java EE Developers
 * http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2
 
+##### 
+
+```
+mkdir /usr/share/eclipse-indigo
+```
+
+```
+nano /usr/bin/eclipse-indigo
+```
+```bash
+#!/bin/sh
+export ECLIPSE_HOME="/usr/share/eclipse-indigo"
+
+$ECLIPSE_HOME/eclipse $*
+```
+
 
