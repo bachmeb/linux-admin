@@ -197,3 +197,11 @@ Dependency Installed:
 Complete!
 */
 ```
+
+##### Install xauth
+```
+sudo yum install xauth
+```
+
+##### Install Xming on your local machine
+* [/docs/common/xming.md](Xming)
