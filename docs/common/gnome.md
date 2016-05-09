@@ -173,6 +173,9 @@ Transaction Check Error:
 
 Error Summary
 -------------
-
-
 */
+
+##### Remove the X Window System group
+```
+sudo yum groupremove "X Window System" Desktop
+```
