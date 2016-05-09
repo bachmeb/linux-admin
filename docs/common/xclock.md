@@ -204,4 +204,7 @@ sudo yum install xauth
 ```
 
 ##### Install Xming on your local machine
-* [/docs/common/xming.md](Xming)
+* [Xming](docs/common/xming.md)
+
+##### Connect to the remote machine via SSH using Putty with X11 Forwarding enabled and launch xclock
+* The xclock window should be displayed on your local machine
