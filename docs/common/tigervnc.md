@@ -81,3 +81,6 @@ vncpasswd
 su - user
 vncpasswd
 ```
+
+* *The stored password is not encrypted; anyone who has access to the password file can find the plain-text password.* (https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/chap-TigerVNC.html)
+ 
