@@ -109,6 +109,29 @@ sudo cat /etc/sysconfig/iptables
 COMMIT
 ```
 
-##### Configure iptables
+##### Add a rule to allow tcp traffic on port 22
 ```
+sudo /sbin/iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
 ```
+
+##### Confirm that the rule was added
+```
+sudo iptables -vnL
+```
+
+##### Save the rule
+```
+sudo /etc/init.d/iptables save
+```
+
+##### Confirm that the rule was added to the iptables file in sysconfig
+```
+sudo cat /etc/sysconfig/iptables
+```
+
+##### Add a rule to allow TCP traffic on additional ports
+```
+sudo /sbin/iptables -A INPUT -m state --state NEW -m tcp -p tcp -m multiport --dports 5901:5903,6001:6003 -j ACCEPT
+```
+
+
