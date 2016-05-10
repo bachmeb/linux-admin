@@ -169,3 +169,6 @@ sudo /sbin/iptables -A INPUT -m state --state NEW -m tcp -p tcp -m multiport --d
     * Misc
       * Shared: NO
       * Show dot when no cursor: NO
+
+##### Type in the VNC password
+##### Login with your system username and password
