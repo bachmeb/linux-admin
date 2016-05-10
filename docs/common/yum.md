@@ -101,3 +101,8 @@ subscription-manager config --rhsm.manage_repos=0
 ```
 yum provides mod_access.so
 ```
+
+##### See a list of all the installed and available package groups
+```
+yum grouplist
+```
