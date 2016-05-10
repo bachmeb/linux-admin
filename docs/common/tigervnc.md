@@ -66,8 +66,12 @@ cat /etc/sysconfig/vncservers
 sudo vi /etc/sysconfig/vncservers
 ```
 
-##### Configure display number 3 for user joe
+##### Configure display number 3 for your account
 ```bash
-VNCSERVERS="3:joe"
+VNCSERVERS="3:[YOUR ACCOUNT NAME]"
 ```
 
+##### Set your VNC password
+```
+vncpasswd
+```
