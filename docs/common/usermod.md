@@ -1,7 +1,7 @@
 # usermod
 
 ## References
-* 
+* http://man7.org/linux/man-pages/man8/usermod.8.html
 
 Add your user account to the dba group
 ```
