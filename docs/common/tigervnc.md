@@ -19,3 +19,7 @@ yum search vnc
 sudo yum install tigervnc-server
 ```
 
+##### Ask where is vncserver
+```
+whereis vncserver
+```
