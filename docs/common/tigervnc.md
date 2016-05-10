@@ -24,7 +24,7 @@ sudo yum install tigervnc-server
 whereis vncserver
 ```
 
-##### Check the status of the
+##### Check the status of the service
 ```
 sudo /sbin/service vncserver status
 ```
