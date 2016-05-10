@@ -63,7 +63,7 @@ cat /etc/sysconfig/vncservers
 
 ##### Edit the configuration file
 ```
-vi /etc/sysconfig/vncservers
+sudo vi /etc/sysconfig/vncservers
 ```
 
 ##### Configure display number 3 for user joe
