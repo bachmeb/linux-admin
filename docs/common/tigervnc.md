@@ -60,3 +60,14 @@ cat /etc/sysconfig/vncservers
 # VNCSERVERS="2:myusername"
 # VNCSERVERARGS[2]="-geometry 800x600 -nolisten tcp -localhost"
 ```
+
+##### Edit the configuration file
+```
+vi /etc/sysconfig/vncservers
+```
+
+##### Configure display number 3 for user joe
+```bash
+VNCSERVERS="3:joe"
+```
+
