@@ -134,4 +134,7 @@ sudo cat /etc/sysconfig/iptables
 sudo /sbin/iptables -A INPUT -m state --state NEW -m tcp -p tcp -m multiport --dports 5901:5903,6001:6003 -j ACCEPT
 ```
 
+##### Install a vnc viewer on the client machine
+* Windows 7
+  * https://github.com/TigerVNC/tigervnc/releases/tag/v1.6.0
 
