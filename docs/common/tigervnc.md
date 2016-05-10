@@ -138,3 +138,34 @@ sudo /sbin/iptables -A INPUT -m state --state NEW -m tcp -p tcp -m multiport --d
 * Windows 7
   * https://github.com/TigerVNC/tigervnc/releases/tag/v1.6.0
 
+##### Connect via TigerVNC from the client machine
+* VNC Server: hostname:2
+* Options
+  * Compression
+    * Auto Select: YES
+    * Custom Compression Level: NO
+    * Allow JPEG Compression: YES
+  * Security
+    * Encryption
+      * None: YES
+      * TLS with anonymous certificates: YES
+      * TLS with X509 certificates: YES
+    * Authentication
+      * None: YES
+      * Standard VNC: YES
+      * Username and password: YES
+    * Input
+      * View only: NO
+      * Accept clipboard from server: YES
+      * Send clipboard to server: YES
+      * Send primary selection and cut buffer as clipboard: YES
+      * Pass system keys directly to server: YES
+      * Menu key: F8
+    * Screen
+      * Resize on remote connect: NO
+      * Resize remote session to the local window: YES
+      * Full screen mode: NO
+        * Enable full screen mode over all monitors: YES
+    * Misc
+      * Shared: NO
+      * Show dot when no cursor: NO
