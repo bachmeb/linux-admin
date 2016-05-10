@@ -71,7 +71,13 @@ sudo vi /etc/sysconfig/vncservers
 VNCSERVERS="3:[YOUR ACCOUNT NAME]"
 ```
 
-##### Set your VNC password
+##### Set the VNC password for your account
 ```
+vncpasswd
+```
+
+##### Set the VNC password for another account
+```
+su - user
 vncpasswd
 ```
