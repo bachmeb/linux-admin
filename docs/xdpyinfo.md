@@ -1,9 +1,19 @@
 # xdpyinfo
 
 ## References
-* 
+* http://forums.fedoraforum.org/showthread.php?t=54337
 
-##### 
+##### Which version of X.Org am I running
+```
+xdpyinfo | grep "X.Org version"
+```
+```c
+/*
+X.Org version: 1.15.0
+*/
+```
+
+##### Show all info
 ```
 xdpyinfo
 ```
