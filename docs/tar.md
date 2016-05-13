@@ -12,8 +12,6 @@ tar -cvf file.tar inputfile1 inputfile2
 ```
 cd /var/wiki/
 tar -cvf ~/wiki.html.2016-05-13.tar html/
-
-tar -cvf file.tar inputfile1 inputfile2
 ```
 ##### Separate an archive created by tar into separate files, at the shell prompt
 ```
