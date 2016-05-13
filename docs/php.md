@@ -39,6 +39,69 @@ phpMyAdmin.noarch : Handle the administration of MySQL over the World Wide Web
 */
 ```
 
+##### Install php-mysql
+```
+sudo yum install php-mysql
+```
+```c
+/*
+Loaded plugins: fastestmirror, refresh-packagekit
+Setting up Install Process
+Loading mirror speeds from cached hostfile
+ * base: chicago.gaminghost.co
+ * epel: mirror.steadfast.net
+ * extras: centos.chi.host-engine.com
+ * ius: ord.mirror.rackspace.com
+ * updates: mirror.steadfast.net
+Resolving Dependencies
+--> Running transaction check
+---> Package php-mysql.x86_64 0:5.3.3-46.el6_7.1 will be installed
+--> Processing Dependency: php-pdo(x86-64) for package: php-mysql-5.3.3-46.el6_7.1.x86_64
+--> Running transaction check
+---> Package php-pdo.x86_64 0:5.3.3-46.el6_7.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=================================================================================================================
+ Package                   Arch                   Version                          Repository               Size
+=================================================================================================================
+Installing:
+ php-mysql                 x86_64                 5.3.3-46.el6_7.1                 updates                  86 k
+Installing for dependencies:
+ php-pdo                   x86_64                 5.3.3-46.el6_7.1                 updates                  80 k
+
+Transaction Summary
+=================================================================================================================
+Install       2 Package(s)
+
+Total download size: 165 k
+Installed size: 384 k
+Is this ok [y/N]: y
+Downloading Packages:
+(1/2): php-mysql-5.3.3-46.el6_7.1.x86_64.rpm                                              |  86 kB     00:00     
+(2/2): php-pdo-5.3.3-46.el6_7.1.x86_64.rpm                                                |  80 kB     00:00     
+-----------------------------------------------------------------------------------------------------------------
+Total                                                                            1.4 MB/s | 165 kB     00:00     
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing : php-pdo-5.3.3-46.el6_7.1.x86_64                                                               1/2 
+  Installing : php-mysql-5.3.3-46.el6_7.1.x86_64                                                             2/2 
+  Verifying  : php-mysql-5.3.3-46.el6_7.1.x86_64                                                             1/2 
+  Verifying  : php-pdo-5.3.3-46.el6_7.1.x86_64                                                               2/2 
+
+Installed:
+  php-mysql.x86_64 0:5.3.3-46.el6_7.1                                                                            
+
+Dependency Installed:
+  php-pdo.x86_64 0:5.3.3-46.el6_7.1                                                                              
+
+Complete!
+*/
+```
+
 ##### Display php info
 ```
 php -i
