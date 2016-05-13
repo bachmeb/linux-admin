@@ -3,6 +3,30 @@
 ## References
 * http://stackoverflow.com/questions/15346605/php-apache-php-fatal-error-call-to-undefined-function-mysql-connect
 
+##### Search yum for php
+```
+sudo yum search php
+```
+
+##### Search yum for php & mysql
+```
+sudo yum search mysql | grep php
+```
+```c
+/*
+php-ZendFramework-Db-Adapter-Mysqli.noarch : Zend Framework database adapter for
+php-ZendFramework-Db-Adapter-Pdo-Mysql.noarch : Zend Framework database adapter
+php-mysql.x86_64 : A module for PHP applications that use MySQL databases
+php-pear-MDB2-Driver-mysql.noarch : MySQL MDB2 driver
+php-pear-MDB2-Driver-mysqli.noarch : MySQL Improved MDB2 driver
+php55u-mysqlnd.x86_64 : A module for PHP applications that use MySQL databases
+php56u-mysqlnd.x86_64 : A module for PHP applications that use MySQL databases
+php70u-mysqlnd.x86_64 : A module for PHP applications that use MySQL databases
+php-udan11-sql-parser.noarch : A validating SQL lexer and parser with a focus on
+phpMyAdmin.noarch : Handle the administration of MySQL over the World Wide Web
+*/
+```
+
 ##### Display php info
 ```
 php -i
