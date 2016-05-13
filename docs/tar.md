@@ -3,7 +3,7 @@
 ## References
 * https://kb.iu.edu/d/acfi
 
-##### Combine multiple files and/or directories into a single file
+##### Create an archive from multiple files and/or directories
 ```
 tar -cvf file.tar inputfile1 inputfile2
 ```
@@ -13,6 +13,12 @@ tar -cvf file.tar inputfile1 inputfile2
 cd /var/wiki/
 tar -cvf ~/wiki.html.2016-05-13.tar html/
 ```
+
+##### List all files in archive.tar verbosely
+```
+tar -tvf archive.tar
+```
+
 ##### Separate an archive created by tar into separate files, at the shell prompt
 ```
 tar -xvf file.tar
