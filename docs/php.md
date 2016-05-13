@@ -8,6 +8,18 @@
 sudo yum search php
 ```
 
+##### Search yum for installed php packages
+```
+sudo yum list installed | grep php
+```
+```c
+/*
+php.x86_64                            5.3.3-46.el6_7.1                 @updates 
+php-cli.x86_64                        5.3.3-46.el6_7.1                 @updates 
+php-common.x86_64                     5.3.3-46.el6_7.1                 @updates 
+*/
+```
+
 ##### Search yum for php & mysql
 ```
 sudo yum search mysql | grep php
