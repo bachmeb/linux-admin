@@ -117,3 +117,13 @@ yum list available
 yum list available | grep java
 yum list available | grep openjdk
 ```
+
+##### List all available packages and enable all repos
+```
+yum --enablerepo="*" list available
+```
+
+##### List all packages available in all *debug* repos
+```
+sudo yum --enablerepo='*debug*'list available
+```
