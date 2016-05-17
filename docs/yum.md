@@ -125,5 +125,5 @@ yum --enablerepo="*" list available
 
 ##### List all packages available in all *debug* repos
 ```
-sudo yum --enablerepo='*debug*'list available
+sudo yum --enablerepo='*debug* 'list available
 ```
