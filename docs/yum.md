@@ -106,3 +106,14 @@ yum provides mod_access.so
 ```
 yum grouplist
 ```
+
+##### List all available packages
+```
+yum list available
+```
+
+##### List available packages and filter by name
+```
+yum list available | grep java
+yum list available | grep openjdk
+```
