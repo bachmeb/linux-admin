@@ -17,5 +17,16 @@ history
 
 ##### Add HISTTIMEFORMAT setting to bash profile
 ```
-echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bash_profile ; source ~/.bash_profile
+echo 'export HISTTIMEFORMAT="%Y-%m-%d %T "' >> ~/.bash_profile ; source ~/.bash_profile
+```
+
+##### Check the current setting for history size
+```
+echo "$HISTSIZE $HISTFILESIZE"
+```
+
+##### Set the history size
+```
+echo 'export HISTSIZE=5000' >> ~/.bash_profile ; source ~/.bash_profile
+echo 'export HISTFILESIZE=5000' >> ~/.bash_profile ; source ~/.bash_profile
 ```
