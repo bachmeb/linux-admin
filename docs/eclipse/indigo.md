@@ -11,7 +11,7 @@
 ##### 
 
 ```
-mkdir /usr/share/eclipse-indigo
+mkdir /opt/eclipse/indigo
 ```
 
 ```
@@ -19,7 +19,7 @@ nano /usr/bin/eclipse-indigo
 ```
 ```bash
 #!/bin/sh
-export ECLIPSE_HOME="/usr/share/eclipse-indigo"
+export ECLIPSE_HOME="/opt/eclipse/indigo"
 
 $ECLIPSE_HOME/eclipse $*
 ```
