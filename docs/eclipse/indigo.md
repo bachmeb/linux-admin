@@ -15,7 +15,7 @@ mkdir /opt/eclipse/indigo
 ```
 
 ```
-nano /usr/bin/eclipse-indigo
+sudo nano /usr/bin/eclipse-indigo
 ```
 ```bash
 #!/bin/sh
@@ -24,4 +24,6 @@ export ECLIPSE_HOME="/opt/eclipse/indigo"
 $ECLIPSE_HOME/eclipse $*
 ```
 
-
+```
+sudo chmod +x /usr/bin/eclipse-indigo
+```
