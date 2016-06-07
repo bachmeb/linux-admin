@@ -8,6 +8,7 @@
 * https://wiki.centos.org/HowTos/VNC-Server
 * https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/ch-TigerVNC.html
 * https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/chap-TigerVNC.html
+* http://askubuntu.com/questions/222117/is-it-possible-to-connect-to-already-running-session-on-xubuntu-12-04-machine
 
 
 ##### Search repo for vnc
@@ -172,3 +173,9 @@ sudo /sbin/iptables -A INPUT -m state --state NEW -m tcp -p tcp -m multiport --d
 
 ##### Type in the VNC password
 ##### Login with your system username and password
+
+##### Connect to display 0
+* VNC Server: hostname
+
+##### Connect to display 2
+* VNC Server: hostname:2
