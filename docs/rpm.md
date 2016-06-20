@@ -13,6 +13,32 @@ centos-release-6-7.el6.centos.12.3.x86_64
 */
 ```
 
+##### Check the signature of a package
+```
+rpm -Kvv --nosignature [rpm-file]
+```
+```c
+/*
+D: loading keyring from pubkeys in /var/lib/rpm/pubkeys/*.key
+D: couldn't find any keys in /var/lib/rpm/pubkeys/*.key
+D: loading keyring from rpmdb
+D: opening  db index       /var/lib/rpm/Packages rdonly mode=0x0
+D: locked   db index       /var/lib/rpm/Packages
+D: opening  db index       /var/lib/rpm/Name rdonly mode=0x0
+D:  read h#     652 Header sanity check: OK
+D: added key gpg-pubkey-fd431d51-4ae0493b to keyring
+D:  read h#     653 Header sanity check: OK
+D: added key gpg-pubkey-2fa658e0-45700c69 to keyring
+D: Using legacy gpg-pubkey(s) from rpmdb
+D: Expected size:       853028 = lead(96)+sigs(1284)+pad(4)+data(851644)
+D:   Actual size:       853028
+httpd-2.2.15-53.el6.centos.x86_64.rpm:
+    Header SHA1 digest: OK (7813a8dc99ab3d6eb87c6e6a2967c445c4b9f022)
+    MD5 digest: OK (c4c489685f5144f915d1556563db5ba7)
+D: closed   db index       /var/lib/rpm/Name
+D: closed   db index       /var/lib/rpm/Packages
+*/
+```
 
 ##### Add a repo package
 ```
