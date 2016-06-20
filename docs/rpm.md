@@ -2,6 +2,7 @@
 
 ## References
 * https://www.centos.org/forums/viewtopic.php?t=53593
+* http://unix.stackexchange.com/questions/125567/yum-translation-of-rpm-uvh
 
 ##### Check the CentOS release
 ```
@@ -50,10 +51,16 @@ rpm -qa
 rpm -qa --last
 ```
 
-##### Add a repo package
+##### Install a package
+* -i # Install, (will throw an error if already installed)
+* -U # Update (or install if not present), usually preferred over -i 
+* -v # verbose
+* -h # hash, basically just shows a pretty progress bar
+
 ```
 sudo rpm -Uvh mysql57-community-release-el6-8.noarch.rpm
 ```
+
 
 ##### Find a repo package
 ```
