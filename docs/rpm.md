@@ -41,12 +41,12 @@ D: closed   db index       /var/lib/rpm/Packages
 */
 ```
 
-##### Show all installed RPMs
+##### List all installed packages
 ```
 rpm -qa
 ```
 
-##### List all packages, sorted by install date, latest first
+##### List all installed packages, sorted by install date, latest first
 ```
 rpm -qa --last
 ```
