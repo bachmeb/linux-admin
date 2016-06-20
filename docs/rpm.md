@@ -40,6 +40,16 @@ D: closed   db index       /var/lib/rpm/Packages
 */
 ```
 
+##### List all packages
+```
+rpm -qa
+```
+
+##### List all packages, sorted by install date, latest first
+```
+rpm -qa --last
+```
+
 ##### Add a repo package
 ```
 sudo rpm -Uvh mysql57-community-release-el6-8.noarch.rpm
