@@ -160,3 +160,8 @@ sudo nano /etc/yum/pluginconf.d/subscription-manager.conf
 ```
 enabled=0
 ```
+
+##### If you want to disable one or more Yum plug-ins for a single yum command, add the --disableplugin=plugin_name option
+```
+yum update --disableplugin=presto
+```
