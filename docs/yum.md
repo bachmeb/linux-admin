@@ -113,7 +113,7 @@ name=CentOS-6-Plus
 mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=centosplus
 gpgcheck=1
 enabled=1
-gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
 ```
 
 ##### List all repos
