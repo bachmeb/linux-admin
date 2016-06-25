@@ -145,3 +145,18 @@ yum repolist all
 subscription-manager repos --disable=rhel-6-server-optional-rpms
 ```
 
+##### Disable RHN plugin
+```
+sudo nano /etc/yum/pluginconf.d/rhnplugin.conf
+```
+```
+enabled=0
+```
+
+##### Disable Subscription Manager
+```
+sudo nano /etc/yum/pluginconf.d/subscription-manager.conf
+```
+```
+enabled=0
+```
