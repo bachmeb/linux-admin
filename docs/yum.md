@@ -130,6 +130,7 @@ sudo yum --enablerepo='*debug* 'list available
 ```
 
 ##### Show yum info
+* Note that the plug-in names which follow Loaded plugins are the names you can provide to the --disableplugins=plugin_name option.
 ```
 yum info yum
 ```
@@ -143,3 +144,4 @@ yum repolist all
 ```
 subscription-manager repos --disable=rhel-6-server-optional-rpms
 ```
+
