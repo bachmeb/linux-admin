@@ -5,6 +5,7 @@
 * https://ius.io/GettingStarted/
 * https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F
 * http://serverfault.com/questions/759828/error-while-installing-mysql-on-centos-6-7
+* https://support.rackspace.com/how-to/install-epel-and-additional-repositories-on-centos-and-red-hat/
 
 ##### CentOS 6.7
 * https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/repoview/
@@ -12,6 +13,12 @@
 ##### Install EPEL
 ```
 sudo yum install epel-release
+```
+
+##### If that command doesn’t work, perhaps because the CentOS Extras repository is disabled, use the following manual installation instructions based on your distribution version
+```
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+sudo rpm -Uvh epel-release-6*.rpm
 ```
 
 ##### Download IUS-COMMUNITY-GPG-KEY
