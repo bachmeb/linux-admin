@@ -7,6 +7,7 @@
 * https://access.redhat.com/sites/default/files/attachments/rh_yum_cheatsheet_1214_jcs_print-1.pdf
 * https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/disable-repos.html
 * https://www.centos.org/forums/viewtopic.php?t=9554
+* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Yum_Plugins.html
 
 ##### Register the system with Red Hat Subscription Management
 ```
@@ -126,4 +127,19 @@ yum --enablerepo="*" list available
 ##### List all packages available in all *debug* repos
 ```
 sudo yum --enablerepo='*debug* 'list available
+```
+
+##### Show yum info
+```
+yum info yum
+```
+
+##### List all repos
+```
+yum repolist all
+```
+
+##### Disable a specific repo
+```
+subscription-manager repos --disable=rhel-6-server-optional-rpms
 ```
