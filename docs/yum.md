@@ -44,32 +44,56 @@ repolist: 0
 */
 ```
 
+##### Read the yum config file
+```
+less /etc/yum.conf
+```
+
 ### Configure yum to use the CentOS repo
 ##### Edit yum.conf
 ```
 sudo nano /etc/yum.conf
 ```
-
-##### For CentOS 5, add these lines
+or
 ```
-[CentOS5Base]
-name=CentOS-5-Base
+sudo nano /etc/yum.repos.d/newreponame.repo
+```
+
+##### CentOS 5 OS
+```
+[CentOS5]
+name=CentOS-5-OS
 mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=os
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+```
+##### CentOS 5 Updates
+```
 [CentOS5Updates]
 name=CentOS-5-Updates
 mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=updates
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+```
+##### CentOS 5 Plus
+```
 [CentOS5Plus]
 name=CentOS-5-Plus
 mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=centosplus
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+```
+##### CentOS 6 Base
+```
+[CentOS6]
+name=CentOS 6 OS
+mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=os
+gpgcheck=1
+enabled=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
 ```
 
 ##### List all repos
