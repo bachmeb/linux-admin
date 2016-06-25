@@ -90,10 +90,30 @@ gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
 ```
 [CentOS6]
 name=CentOS 6 OS
-mirrorlist=http://mirrorlist.centos.org/?release=5&arch=$basearch&repo=os
+mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=os
 gpgcheck=1
 enabled=1
 gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
+```
+
+##### CentOS 6 Updates
+```
+[CentOS5Updates]
+name=CentOS 6 Updates
+mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=updates
+gpgcheck=1
+enabled=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
+```
+
+##### CentOS 6 Plus
+```
+[CentOS5Plus]
+name=CentOS-6-Plus
+mirrorlist=http://mirrorlist.centos.org/?release=6&arch=$basearch&repo=centosplus
+gpgcheck=1
+enabled=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
 ```
 
 ##### List all repos
