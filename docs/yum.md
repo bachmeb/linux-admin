@@ -8,6 +8,7 @@
 * https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/disable-repos.html
 * https://www.centos.org/forums/viewtopic.php?t=9554
 * https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Yum_Plugins.html
+* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Managing_Yum_Repositories.html
 
 ##### Register the system with Red Hat Subscription Management
 ```
