@@ -9,6 +9,7 @@
 * https://www.centos.org/forums/viewtopic.php?t=9554
 * https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Yum_Plugins.html
 * https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Managing_Yum_Repositories.html
+* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Removing.html
 
 ##### Register the system with Red Hat Subscription Management
 ```
@@ -209,4 +210,9 @@ enabled=0
 ##### If you want to disable one or more Yum plug-ins for a single yum command, add the --disableplugin=plugin_name option
 ```
 yum update --disableplugin=presto
+```
+
+##### Remove a package
+```
+yum remove totem rhythmbox sound-juicer
 ```
