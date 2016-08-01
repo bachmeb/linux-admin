@@ -352,98 +352,46 @@ template1=# \q
 exit # exit uid=postgres, return to root
 ```
 
-Test the connection as the gitlab (uid=git) user. You should be root to begin this test:
+##### Test the connection as the gitlab (uid=git) user. 
+```
+sudo su 
+whoami
+```
 
-    whoami
+##### Attempt to log in to Postgres as the git user:
+```
+sudo -u git psql -d gitlabhq_production
+```
 
-Attempt to log in to Postgres as the git user:
+##### If you see the following, your password has been accepted successfully
+```
+gitlabhq_production=>
+```
 
-    sudo -u git psql -d gitlabhq_production
-
-If you see the following:
-
-    gitlabhq_production=>
-
-your password has been accepted successfully and you can type \q to quit.
-
-Check if the `pg_trgm` extension is enabled:
-
-    SELECT true AS enabled
-    FROM pg_available_extensions
-    WHERE name = 'pg_trgm'
-    AND installed_version IS NOT NULL;
+##### Check if the `pg_trgm` extension is enabled:
+```
+SELECT true AS enabled
+FROM pg_available_extensions
+WHERE name = 'pg_trgm'
+AND installed_version IS NOT NULL;
+```
 
 If the extension is enabled this will produce the following output:
-
-    enabled
-    ---------
-     t
-     (1 row)
+```
+enabled
+---------
+ t
+ (1 row)
+```
 
 Ensure you are using the right settings in your `/var/lib/pgsql/9.3/data/pg_hba.conf`
 to not get ident issues (you can use trust over ident):
-
-    host    all             all             127.0.0.1/32            trust
+```
+host    all             all             127.0.0.1/32            trust
+```
 
 Check the official [documentation][psql-doc-auth] for more information on
 authentication methods.
-
-### 5.2 MySQL
-
-#### Note
-
-We do not recommend using MySQL due to various issues. For example, case [(in)sensitivity](https://dev.mysql.com/doc/refman/5.0/en/case-sensitivity.html) and [problems](https://bugs.mysql.com/bug.php?id=65830) that [suggested](https://bugs.mysql.com/bug.php?id=50909) [fixes](https://bugs.mysql.com/bug.php?id=65830) [have](https://bugs.mysql.com/bug.php?id=63164).
-
-#### MySQL
-
-Install `mysql` and enable the `mysqld` service to start on boot:
-
-    yum install -y mysql-server mysql-devel
-    chkconfig mysqld on
-    service mysqld start
-
-Ensure you have MySQL version 5.5.14 or later:
-
-    mysql --version
-
-Secure your installation:
-
-    mysql_secure_installation
-
-Login to MySQL (type the database root password):
-
-    mysql -u root -p
-
-
-Create a user for GitLab (change $password in the command below to a real password you pick):
-
-    CREATE USER 'git'@'localhost' IDENTIFIED BY '$password';
-
-Ensure you can use the InnoDB engine which is necessary to support long indexes.
-If this fails, check your MySQL config files (e.g. `/etc/mysql/*.cnf`, `/etc/mysql/conf.d/*`) for the setting "innodb = off".
-
-    SET storage_engine=INNODB;
-
-Create the GitLab production database:
-
-    CREATE DATABASE IF NOT EXISTS `gitlabhq_production` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
-
-Grant the GitLab user necessary permissions on the table:
-
-    GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, CREATE TEMPORARY TABLES, DROP, INDEX, ALTER, LOCK TABLES, REFERENCES ON `gitlabhq_production`.* TO 'git'@'localhost';
-
-Quit the database session:
-
-    \q
-
-Try connecting to the new database with the new user:
-
-    sudo -u git -H mysql -u git -p -D gitlabhq_production
-
-Type the password you replaced $password with earlier.
-Quit the database session:
-
-    \q
 
 ----------
 
@@ -452,29 +400,35 @@ Quit the database session:
 GitLab requires at least Redis 2.8.
 
 Remove old version:
-
-    yum remove redis
+```
+sudo yum remove redis
+```
 
 Install new version from Remi's RPM repository:
-
-    yum --enablerepo=remi,remi-test install redis
+```
+sudo yum --enablerepo=remi,remi-test install redis
+```
 
 Make sure redis is started on boot:
-
-    chkconfig redis on
+```
+sudo chkconfig redis on
+```
 
 Configure redis to use sockets:
-
-    cp /etc/redis.conf /etc/redis.conf.orig
+```
+cp /etc/redis.conf /etc/redis.conf.orig
+```
 
 Disable Redis listening on TCP by setting 'port' to 0:
-
-    sed 's/^port .*/port 0/' /etc/redis.conf.orig | sudo tee /etc/redis.conf
+```
+sed 's/^port .*/port 0/' /etc/redis.conf.orig | sudo tee /etc/redis.conf
+```
 
 Enable Redis socket for default CentOS path:
-
-    echo 'unixsocket /var/run/redis/redis.sock' | sudo tee -a /etc/redis.conf
-    echo -e 'unixsocketperm 0770' | sudo tee -a /etc/redis.conf
+```
+echo 'unixsocket /var/run/redis/redis.sock' | sudo tee -a /etc/redis.conf
+echo -e 'unixsocketperm 0770' | sudo tee -a /etc/redis.conf
+```
 
 Create the directory which contains the socket
 
