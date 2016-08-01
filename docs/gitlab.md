@@ -3,6 +3,8 @@
 ## References
 * https://github.com/gitlabhq/gitlab-recipes/blob/master/install/centos/README.md
 
+*This doc is a copy and edit of the install doc provided in the gitlabhq project called gitlab-recipies*
+
 ```
 Distribution      : CentOS 6.8 Minimal
 GitLab version    : 8.9
