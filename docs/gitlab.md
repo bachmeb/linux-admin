@@ -222,16 +222,25 @@ sudo make prefix=/usr/local install
 ```
 
 Install the Bundler Gem:
-
-    gem install bundler --no-doc
+```
+sudo /usr/local/bin/gem install bundler --no-doc
+```
 
 Logout and login again for the `$PATH` to take effect. Check that ruby is properly
 installed with:
-
-    which ruby
-    # /usr/local/bin/ruby
-    ruby -v
-    # ruby 2.1.10p492 (2016-04-01 revision 54464) [x86_64-linux]
+```
+exit
+which ruby
+```
+```
+/usr/local/bin/ruby
+```
+```
+ruby -v
+```
+```
+# ruby 2.1.10p492 (2016-04-01 revision 54464) [x86_64-linux]
+```
 
 
 ----------
@@ -239,30 +248,34 @@ installed with:
 ## 3. Go
 
 Since GitLab 8.0, Git HTTP requests are handled by gitlab-workhorse (formerly gitlab-git-http-server). This is a small daemon written in Go. To install gitlab-workhorse we need a Go compiler.
-
-    yum install golang golang-bin golang-src
+```
+sudo yum install golang golang-bin golang-src
+```
 
 ----------
 
 ## 4. System Users
 
 Create a `git` user for Gitlab:
-
-    adduser --system --shell /bin/bash --comment 'GitLab' --create-home --home-dir /home/git/ git
+```
+sudo adduser --system --shell /bin/bash --comment 'GitLab' --create-home --home-dir /home/git/ git
+```
 
 **Important:** In order to include `/usr/local/bin` to git user's PATH, one way is to edit the sudoers file. As root run:
+```
+sudo visudo
+```
 
-    visudo
+##### Then search for this line:
+```
+Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin
+```
 
-Then search for this line:
-
-    Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin
-
-and append `/usr/local/bin` like so:
-
-    Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
-
-Save and exit.
+##### and append `/usr/local/bin` like so:
+```
+Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+```
+##### Save and exit.
 
 ----------
 
@@ -273,44 +286,71 @@ Save and exit.
 NOTE: because we need to make use of extensions we need at least pgsql 9.1 and the default 8.x on centos will not work.  We need to get the PGDG repositories enabled
 
 If there are any previous versions remove them:
-
-    yum remove postgresql
-
+```
+yum list installed | grep postgresql
+```
+```
+yum remove postgresql
+```
 Install the pgdg repositories:
+```
+sudo rpm -Uvh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-centos93-9.3-2.noarch.rpm
+```
 
-    rpm -Uvh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-centos93-9.3-2.noarch.rpm
+##### Install `postgresql93-server`, `postgreqsql93-devel` and the `postgresql93-contrib` libraries:
+```
+sudo yum install postgresql93-server postgresql93-devel postgresql93-contrib
+```
 
-Install `postgresql93-server`, `postgreqsql93-devel` and the `postgresql93-contrib` libraries:
-
-    yum install postgresql93-server postgresql93-devel postgresql93-contrib
-
-Rename the service script:
-
-    mv /etc/init.d/{postgresql-9.3,postgresql}
+##### Rename the service script:
+```
+sudo mv /etc/init.d/{postgresql-9.3,postgresql}
+```
 
 Initialize the database:
-
-    service postgresql initdb
+```
+sudo /sbin/service postgresql initdb
+```
 
 Start the service and configure service to start on boot:
-
-    service postgresql start
-    chkconfig postgresql on
+```
+sudo /sbin/service postgresql start
+sudo chkconfig postgresql on
+```
 
 Configure the database user and password:
-
-    su - postgres
-    psql -d template1
-
-    psql (9.4.3)
-    Type "help" for help.
-    template1=# CREATE USER git CREATEDB;
-    CREATE ROLE
-    template1=# CREATE DATABASE gitlabhq_production OWNER git;
-    CREATE DATABASE
-    template1=# CREATE EXTENSION IF NOT EXISTS pg_trgm;
-    template1=# \q
-    exit # exit uid=postgres, return to root
+```
+sudo su - postgres
+psql -d template1
+```
+```
+psql (9.4.3)
+Type "help" for help.
+```
+```
+template1=# CREATE USER git CREATEDB;
+```
+```
+CREATE ROLE
+```
+```
+template1=# CREATE DATABASE gitlabhq_production OWNER git;
+```
+```
+CREATE DATABASE
+```
+```
+template1=# CREATE EXTENSION IF NOT EXISTS pg_trgm;
+```
+```
+CREATE EXTENSION
+```
+```
+template1=# \q
+```
+```
+exit # exit uid=postgres, return to root
+```
 
 Test the connection as the gitlab (uid=git) user. You should be root to begin this test:
 
