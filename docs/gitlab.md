@@ -107,7 +107,7 @@ yum-config-manager --enable epel --enable remi-safe
 sudo yum update
 ```
 ```
-yum groupinstall 'Development Tools'
+sudo yum groupinstall 'Development Tools'
 ```
 ```
 sudo yum install readline readline-devel ncurses-devel gdbm-devel glibc-devel tcl-devel openssl-devel curl-devel expat-devel db4-devel byacc sqlite-devel libyaml libyaml-devel libffi libffi-devel libxml2 libxml2-devel libxslt libxslt-devel libicu libicu-devel system-config-firewall-tui redis sudo wget crontabs logwatch logrotate perl-Time-HiRes git cmake libcom_err-devel.i686 libcom_err-devel.x86_64 nodejs
@@ -115,7 +115,7 @@ sudo yum install readline readline-devel ncurses-devel gdbm-devel glibc-devel tc
 
 ##### For reStructuredText markup language support, install required package:
 ```
-yum -y install python-docutils
+sudo yum install python-docutils
 ```
 
 **RHEL Notes**
@@ -123,7 +123,7 @@ yum -y install python-docutils
 If some packages (eg. gdbm-devel, libffi-devel and libicu-devel) are NOT installed,
 add the rhel6 optional packages repo to your server to get those packages:
 ```
-yum-config-manager --enable rhel-6-server-optional-rpms
+sudo yum-config-manager --enable rhel-6-server-optional-rpms
 ```
 
 Tip taken from [here](https://github.com/gitlabhq/gitlab-recipes/issues/62).
@@ -133,10 +133,10 @@ Tip taken from [here](https://github.com/gitlabhq/gitlab-recipes/issues/62).
 In order to receive mail notifications, make sure to install a
 mail server. The recommended one is postfix and you can install it with:
 ```
-yum -y install postfix
+sudo yum install postfix
 ```
 
-* To use and configure sendmail instead of postfix see [Advanced Email Configurations](../../e-mail/configure_email.md).
+* To use and configure sendmail instead of postfix see [Advanced Email Configurations](https://github.com/gitlabhq/gitlab-recipes/blob/master/e-mail/configure_email.md).
 
 ### Configure the default editor
 
@@ -145,14 +145,15 @@ You can choose between editors such as nano, vi, vim, etc.
 
 In this case we will use vim as the default editor for consistency.
 If you are familiar with vim set it as default editor with the commands below.
+```
+sudo yum install vim-enhanced
+sudo ln -s /usr/bin/vim /usr/bin/editor
+```
 
-    # Install vim and set as default editor
-    yum -y install vim-enhanced
-    ln -s /usr/bin/vim /usr/bin/editor
-
-To remove this alias in the future:
-
-    rm -i /usr/bin/editor
+##### To remove this alias in the future:
+```
+rm -i /usr/bin/editor
+```
 
 ### Install Git from Source
 
@@ -163,7 +164,7 @@ git --version
 
 ##### If not, install it from source. First remove the system Git:
 ```
-yum remove git
+sudo yum remove git
 ```
 
 Install the pre-requisite files for Git compilation:
@@ -172,19 +173,23 @@ sudo yum install zlib-devel perl-CPAN gettext curl-devel expat-devel gettext-dev
 ```
 
 ##### Download and extract it:
-
-    mkdir /tmp/git && cd /tmp/git
-    curl --progress https://www.kernel.org/pub/software/scm/git/git-2.9.0.tar.gz | tar xz
-    cd git-2.9.0
-    ./configure
-    make
-    make prefix=/usr/local install
-
+```
+mkdir /tmp/git && cd /tmp/git
+curl --progress https://www.kernel.org/pub/software/scm/git/git-2.9.0.tar.gz | tar xz
+cd git-2.9.0
+sudo ./configure
+sudo make
+sudo make prefix=/usr/local install
+```
 Make sure Git is in your `$PATH`:
+```
+which git
+```
+##### You might have to logout and login again for the `$PATH` to take effect.
+```
+exit
+```
 
-    which git
-
-You might have to logout and login again for the `$PATH` to take effect.
 **Note:** When editing `config/gitlab.yml` (step 7), change the git `bin_path` to `/usr/local/bin/git`.
 
 ----------
@@ -194,22 +199,27 @@ You might have to logout and login again for the `$PATH` to take effect.
 The use of ruby version managers such as [RVM](http://rvm.io/), [rbenv](https://github.com/sstephenson/rbenv) or [chruby](https://github.com/postmodern/chruby) with GitLab in production frequently leads to hard to diagnose problems. Version managers are not supported and we strongly advise everyone to follow the instructions below to use a system ruby.
 
 Remove the old Ruby 1.8 package if present. GitLab only supports the Ruby 2.1 release series:
+```
+sudo yum list installed | grep ruby
+ruby
+yum remove ruby
+```
 
-    yum remove ruby
-
-Remove any other Ruby build if it is still present:
-
-    cd <your-ruby-source-path>
-    make uninstall
+##### Remove any other Ruby build if it is still present:
+```
+cd <your-ruby-source-path>
+make uninstall
+```
 
 Download Ruby and compile it:
-
-    mkdir /tmp/ruby && cd /tmp/ruby
-    curl --progress https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.9.tar.gz | tar xz
-    cd ruby-2.1.9
-    ./configure --disable-install-rdoc
-    make
-    make prefix=/usr/local install
+```
+mkdir /tmp/ruby && cd /tmp/ruby
+curl --progress https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.9.tar.gz | tar xz
+cd ruby-2.1.9
+sudo ./configure --disable-install-rdoc
+sudo make
+sudo make prefix=/usr/local install
+```
 
 Install the Bundler Gem:
 
