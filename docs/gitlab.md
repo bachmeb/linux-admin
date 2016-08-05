@@ -508,38 +508,91 @@ sudo usermod -aG redis git
 ------
 
 ## 7. GitLab
-
-    # We'll install GitLab into home directory of the user "git"
-    cd /home/git
+##### We'll install GitLab into home directory of the user "git"
+```
+sudo su -l git
+whoami
+cd ~
+```
 
 ### Clone the Source
-
-    # Clone GitLab repository
-    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 8-9-stable gitlab
+##### Clone GitLab repository
+```
+git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 8-9-stable gitlab
+```
 
 **Note:** You can change `8-9-stable` to `master` if you want the *bleeding edge* version, but do so with caution!
 
 ### Configure it
 
-    # Go to GitLab installation folder
-    cd /home/git/gitlab
+##### Go to GitLab installation folder
+```
+cd /home/git/gitlab
+```
 
-    # Copy the example GitLab config
-    sudo -u git -H cp config/gitlab.yml.example config/gitlab.yml
+#### Copy the example GitLab config
+```
+cp config/gitlab.yml.example config/gitlab.yml
+```
 
-    # Update GitLab config file, follow the directions at top of file
-    sudo -u git -H editor config/gitlab.yml
+##### Update GitLab config file, follow the directions at top of file
+```
+editor config/gitlab.yml
+```
+```yml
+# # # # # # # # # # # # # # # # # #
+# GitLab application config file  #
+# # # # # # # # # # # # # # # # # #
+#
+###########################  NOTE  #####################################
+# This file should not receive new settings. All configuration options #
+# * are being moved to ApplicationSetting model!                       #
+# If a setting requires an application restart say so in that screen.  #
+# If you change this file in a Merge Request, please also create       #
+# a MR on https://gitlab.com/gitlab-org/omnibus-gitlab/merge_requests  #
+########################################################################
+#
+#
+# How to use:
+# 1. Copy file as gitlab.yml
+# 2. Update gitlab -> host with your fully qualified domain name
+# 3. Update gitlab -> email_from
+# 4. If you installed Git from source, change git -> bin_path to /usr/local/bin/git
+#    IMPORTANT: If Git was installed in a different location use that instead.
+#    You can check with `which git`. If a wrong path of Git is specified, it will
+#     result in various issues such as failures of GitLab CI builds.
+# 5. Review this configuration file for other settings you may want to adjust
 
-    # Copy the example secrets file
-    sudo -u git -H cp config/secrets.yml.example config/secrets.yml
-    sudo -u git -H chmod 0600 config/secrets.yml
+production: &base
+  #
+  # 1. GitLab app settings
+  # ==========================
 
-    # Make sure GitLab can write to the log/ and tmp/ directories
-    sudo chown -R git log/
-    sudo chown -R git tmp/
-    sudo chmod -R u+rwX,go-w log/
-    sudo chmod -R u+rwX tmp/
+  ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: localhost
+    port: 80 # Set to 443 if using HTTPS, see installation.md#using-https for additional HTTPS configuration details
+    https: false # Set to true if using HTTPS, see installation.md#using-https for additional HTTPS configuration details
 
+    # Uncommment this line below if your ssh host is different from HTTP/HTTPS one
+    # (you'd obviously need to replace ssh.host_example.com with your own host).
+    # Otherwise, ssh host will be set to the `host:` value above
+    # ssh_host: ssh.host_example.com
+```
+
+##### Copy the example secrets file
+```
+sudo -u git -H cp config/secrets.yml.example config/secrets.yml
+sudo -u git -H chmod 0600 config/secrets.yml
+```
+##### Make sure GitLab can write to the log/ and tmp/ directories
+```
+sudo chown -R git log/
+sudo chown -R git tmp/
+sudo chmod -R u+rwX,go-w log/
+sudo chmod -R u+rwX tmp/
+```
     # Make sure GitLab can write to the tmp/pids/ and tmp/sockets/ directories
     sudo chmod -R u+rwX tmp/pids/
     sudo chmod -R u+rwX tmp/sockets/
