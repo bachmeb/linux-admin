@@ -304,18 +304,24 @@ sudo yum install postgresql93-server postgresql93-devel postgresql93-contrib
 
 ##### Rename the service script:
 ```
+ls -la /etc/init.d/postg*
 sudo mv /etc/init.d/{postgresql-9.3,postgresql}
+ls -la /etc/init.d/postg*
 ```
 
 Initialize the database:
 ```
+sudo ls /var/lib/pgsql/9.3/data 
 sudo /sbin/service postgresql initdb
+sudo ls /var/lib/pgsql/9.3/data 
 ```
 
 Start the service and configure service to start on boot:
 ```
 sudo /sbin/service postgresql start
+chkconfig
 sudo chkconfig postgresql on
+chkconfig
 ```
 
 Configure the database user and password:
