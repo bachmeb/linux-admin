@@ -299,7 +299,11 @@ sudo rpm -Uvh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-centos93-9
 
 ##### Install `postgresql93-server`, `postgreqsql93-devel` and the `postgresql93-contrib` libraries:
 ```
-sudo yum install postgresql93-server postgresql93-devel postgresql93-contrib
+sudo yum install postgresql93-server 
+sudo yum install postgresql93-devel 
+sudo yum install postgresql93-contrib
+sudo yum install postgresql93-libs
+sudo yum install postgresql93-debuginfo
 ```
 
 ##### Rename the service script:
@@ -323,50 +327,64 @@ chkconfig
 sudo chkconfig postgresql on
 chkconfig
 ```
-
-Configure the database user and password:
+##### Switch to the postgres user
 ```
 sudo su - postgres
+```
+
+##### Connect to the postgres db using the default template db
+```
 psql -d template1
 ```
 ```
-psql (9.4.3)
-Type "help" for help.
+# psql (9.4.3)
+# Type "help" for help.
 ```
+##### Create a user called git
 ```
 template1=# CREATE USER git CREATEDB;
 ```
 ```
-CREATE ROLE
+# CREATE ROLE
 ```
+##### Create the gitlab db and make git the owner
 ```
 template1=# CREATE DATABASE gitlabhq_production OWNER git;
 ```
 ```
 CREATE DATABASE
 ```
+##### Create the pg-trgm extension
 ```
 template1=# CREATE EXTENSION IF NOT EXISTS pg_trgm;
 ```
 ```
-CREATE EXTENSION
+# CREATE EXTENSION
 ```
+
+##### Check if the `pg_trgm` extension is enabled:
+```
+SELECT true AS enabled
+FROM pg_available_extensions
+WHERE name = 'pg_trgm'
+AND installed_version IS NOT NULL;
+```
+
+##### Quit postgresql
 ```
 template1=# \q
 ```
-```
-exit # exit uid=postgres, return to root
-```
 
-##### Test the connection as the gitlab (uid=git) user. 
+##### exit uid=postgres, return to your linux user account
 ```
-sudo su 
+exit
 whoami
 ```
 
-##### Attempt to log in to Postgres as the git user:
+##### Attempt to log in to Postgres as the git linux user:
 ```
-sudo -u git psql -d gitlabhq_production
+sudo su -l git
+psql -d gitlabhq_production
 ```
 
 ##### If you see the following, your password has been accepted successfully
@@ -389,6 +407,15 @@ enabled
  t
  (1 row)
 ```
+##### If the extension is not enabled, quit postgres, switch to the postgres linux account, connect to the gitlabhq_production database, and enable the extension
+```
+\q
+exit
+sudo su -l postgres
+psql -d gitlabhq_production
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+```
+##### Then quit postgres, exit the postgres linux account, switch to the git linux account, connect to the gitlabhq_production database and see again if the extension is enabled
 
 Ensure you are using the right settings in your `/var/lib/pgsql/9.3/data/pg_hba.conf`
 to not get ident issues (you can use trust over ident):
@@ -407,17 +434,21 @@ GitLab requires at least Redis 2.8.
 
 Remove old version:
 ```
+sudo yum list installed | grep redis
 sudo yum remove redis
 ```
 
 Install new version from Remi's RPM repository:
 ```
+sudo yum search redis
 sudo yum --enablerepo=remi,remi-test install redis
 ```
 
 Make sure redis is started on boot:
 ```
+chkconfig
 sudo chkconfig redis on
+chkconfig | grep redis
 ```
 
 Configure redis to use sockets:
@@ -427,34 +458,52 @@ cp /etc/redis.conf /etc/redis.conf.orig
 
 Disable Redis listening on TCP by setting 'port' to 0:
 ```
+less /etc/redis.conf.orig
+/
+port
+q
 sed 's/^port .*/port 0/' /etc/redis.conf.orig | sudo tee /etc/redis.conf
 ```
 
 Enable Redis socket for default CentOS path:
 ```
+cat /etc/redis.conf
 echo 'unixsocket /var/run/redis/redis.sock' | sudo tee -a /etc/redis.conf
 echo -e 'unixsocketperm 0770' | sudo tee -a /etc/redis.conf
 ```
 
 Create the directory which contains the socket
-
-    mkdir /var/run/redis
-    chown redis:redis /var/run/redis
-    chmod 755 /var/run/redis
+```
+sudo mkdir /var/run/redis
+ls -la /var/run/redis
+sudo chown redis:redis /var/run/redis
+sudo chmod 755 /var/run/redis
+ls -la /var/run/redis
+```
 
 Persist the directory which contains the socket, if applicable
 
-    if [ -d /etc/tmpfiles.d ]; then
-        echo 'd  /var/run/redis  0755  redis  redis  10d  -' | sudo tee -a /etc/tmpfiles.d/redis.conf
-    fi
+```
+if [ -d /etc/tmpfiles.d ]; then
+ echo 'd  /var/run/redis  0755  redis  redis  10d  -' | sudo tee -a /etc/tmpfiles.d/redis.conf
+fi
+```
 
 Activate the changes to redis.conf:
-
-    service redis restart
+```
+sudo /sbin/service redis restart
+```
+```
+# Stopping redis-server: Could not connect to Redis at 127.0.0.1:0: Connection refused
+# Could not connect to Redis at 127.0.0.1:0: Connection refused
+#                                                            [  OK  ]
+#Starting redis-server:                                     [  OK  ]
+```
 
 Add git to the redis group:
-
-    usermod -aG redis git
+```
+sudo usermod -aG redis git
+```
 
 ------
 
