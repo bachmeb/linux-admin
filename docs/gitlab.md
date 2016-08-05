@@ -1104,53 +1104,62 @@ test:
 
 staging:
   <<: *base
-
-
-
-
 ```
 
 ##### Copy the example secrets file
 ```
-sudo -u git -H cp config/secrets.yml.example config/secrets.yml
-sudo -u git -H chmod 0600 config/secrets.yml
+cp config/secrets.yml.example config/secrets.yml
+chmod 0600 config/secrets.yml
 ```
 ##### Make sure GitLab can write to the log/ and tmp/ directories
 ```
-sudo chown -R git log/
-sudo chown -R git tmp/
-sudo chmod -R u+rwX,go-w log/
-sudo chmod -R u+rwX tmp/
+chown -R git log/
+chown -R git tmp/
+chmod -R u+rwX,go-w log/
+chmod -R u+rwX tmp/
 ```
-    # Make sure GitLab can write to the tmp/pids/ and tmp/sockets/ directories
-    sudo chmod -R u+rwX tmp/pids/
-    sudo chmod -R u+rwX tmp/sockets/
+##### Make sure GitLab can write to the tmp/pids/ and tmp/sockets/ directories
+```
+chmod -R u+rwX tmp/pids/
+chmod -R u+rwX tmp/sockets/
+```
 
-    # Create the public/uploads/ directory
-    sudo -u git -H mkdir public/uploads/
+##### Create the public/uploads/ directory
+```
+mkdir public/uploads/
+```
 
-    # Make sure only the GitLab user has access to the public/uploads/ directory
-    # now that files in public/uploads are served by gitlab-workhorse
-    sudo chmod 0700 public/uploads
+##### Make sure only the GitLab user has access to the public/uploads/ directory now that files in public/uploads are served by gitlab-workhorse
+```
+chmod 0700 public/uploads
+chmod ug+rwX,o-rwx /home/git/repositories/
+```
 
-    sudo chmod ug+rwX,o-rwx /home/git/repositories/
+##### Change the permissions of the directory where CI build traces are stored
+```
+chmod -R u+rwX builds/
+```
 
-    # Change the permissions of the directory where CI build traces are stored
-    sudo chmod -R u+rwX builds/
+##### Change the permissions of the directory where CI artifacts are stored
+```
+chmod -R u+rwX shared/artifacts/
+```
 
-    # Change the permissions of the directory where CI artifacts are stored
-    sudo chmod -R u+rwX shared/artifacts/
+##### Copy the example Unicorn config
+```
+cp config/unicorn.rb.example config/unicorn.rb
+```
 
-    # Copy the example Unicorn config
-    sudo -u git -H cp config/unicorn.rb.example config/unicorn.rb
-
-    # Find number of cores
-    nproc
-
-    # Enable cluster mode if you expect to have a high load instance
-    # Ex. change amount of workers to 3 for 2GB RAM server
-    # Set the number of workers to at least the number of cores
-    sudo -u git -H editor config/unicorn.rb
+##### Find number of cores
+```
+nproc
+```
+##### Enable cluster mode if you expect to have a high load instance
+##### Ex. change amount of workers to 3 for 2GB RAM server
+##### Set the number of workers to at least the number of cores
+```
+editor config/unicorn.rb
+```
 
     # Copy the example Rack attack config
     sudo -u git -H cp config/initializers/rack_attack.rb.example config/initializers/rack_attack.rb
