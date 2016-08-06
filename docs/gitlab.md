@@ -1161,21 +1161,31 @@ nproc
 editor config/unicorn.rb
 ```
 
-    # Copy the example Rack attack config
-    sudo -u git -H cp config/initializers/rack_attack.rb.example config/initializers/rack_attack.rb
+##### Copy the example Rack attack config
+```
+cp config/initializers/rack_attack.rb.example config/initializers/rack_attack.rb
+```
 
-    # Configure Git global settings for git user
-    # 'autocrlf' is needed for the web editor
-    sudo -u git -H git config --global core.autocrlf input
+##### Configure Git global settings for git user
+##### 'autocrlf' is needed for the web editor
+```
+git config --global core.autocrlf input
+```
 
-    # Disable 'git gc --auto' because GitLab already runs 'git gc' when needed
-    sudo -u git -H git config --global gc.auto 0
+##### Disable 'git gc --auto' because GitLab already runs 'git gc' when needed
+```
+git config --global gc.auto 0
+```
 
-    # Configure Redis connection settings
-    sudo -u git -H cp config/resque.yml.example config/resque.yml
+##### Configure Redis connection settings
+```
+cp config/resque.yml.example config/resque.yml
+```
 
-    # Change the Redis socket path if you are not using the default CentOS configuration
-    sudo -u git -H editor config/resque.yml
+##### Change the Redis socket path if you are not using the default CentOS configuration
+```
+editor config/resque.yml
+```
 
 **Important Note:** Make sure to edit both `gitlab.yml` and `unicorn.rb` to match your setup.
 
@@ -1183,9 +1193,11 @@ editor config/unicorn.rb
 
 ### Configure GitLab DB settings
 
-    # PostgreSQL only:
-    sudo -u git cp config/database.yml.postgresql config/database.yml
-
+##### PostgreSQL only:
+```
+cp config/database.yml.postgresql config/database.yml
+```
+/*
     # MySQL only:
     sudo -u git cp config/database.yml.mysql config/database.yml
 
@@ -1200,6 +1212,7 @@ editor config/unicorn.rb
     # PostgreSQL and MySQL:
     # Make config/database.yml readable to git only
     sudo -u git -H chmod o-rwx config/database.yml
+*/
 
 ### Install Gems
 
@@ -1210,14 +1223,20 @@ For more information check this [post](http://robots.thoughtbot.com/parallel-gem
 First make sure you have bundler >= 1.5.2 (run `bundle -v`) as it addresses some [issues](https://devcenter.heroku.com/changelog-items/411)
 that were [fixed](https://github.com/bundler/bundler/pull/2817) in 1.5.2.
 
-    cd /home/git/gitlab
+```
+cd /home/git/gitlab
+```
 
-    # For PostgreSQL (note, the option says "without ... mysql")
-    sudo -u git -H bundle config build.pg --with-pg-config=/usr/pgsql-9.3/bin/pg_config
-    sudo -u git -H bundle install --deployment --without development test mysql aws kerberos
+##### For PostgreSQL (note, the option says "without ... mysql")
+```
+bundle config build.pg --with-pg-config=/usr/pgsql-9.3/bin/pg_config
+bundle install --deployment --without development test mysql aws kerberos
+```
 
-    # Or for MySQL (note, the option says "without ... postgres")
-    sudo -u git -H bundle install --deployment --without development test postgres aws kerberos
+##### Or for MySQL (note, the option says "without ... postgres")
+```
+sudo -u git -H bundle install --deployment --without development test postgres aws kerberos
+```
 
 **Note:** If you want to use Kerberos for user authentication, then omit `kerberos`
 in the `--without` option above.
@@ -1225,18 +1244,28 @@ in the `--without` option above.
 ### Install GitLab shell
 
 GitLab Shell is an SSH access and repository management software developed specially for GitLab.
+##### Create a symbolic link to /usr/local/bin/git
+```
+sudo ln -s /usr/local/bin/git /usr/bin/git
+```
 
-    # Run the installation task for gitlab-shell (replace `REDIS_URL` if needed):
-    sudo -u git -H bundle exec rake gitlab:shell:install[v3.0.0] REDIS_URL=unix:/var/run/redis/redis.sock RAILS_ENV=production
+##### Run the installation task for gitlab-shell (replace `REDIS_URL` if needed):
+```
+DID NOT WORK
+sudo -u git -H bundle exec rake gitlab:shell:install[v3.0.0] REDIS_URL=unix:/var/run/redis/redis.sock RAILS_ENV=production
+```
 
-    # By default, the gitlab-shell config is generated from your main GitLab config.
-    # You can review (and modify) the gitlab-shell config as follows:
-    sudo -u git -H editor /home/git/gitlab-shell/config.yml
+##### By default, the gitlab-shell config is generated from your main GitLab config.
+##### You can review (and modify) the gitlab-shell config as follows:
+```
+editor /home/git/gitlab-shell/config.yml
+```
 
-    # Ensure the correct SELinux contexts are set
-    # Read http://wiki.centos.org/HowTos/Network/SecuringSSH
-    restorecon -Rv /home/git/.ssh
-
+##### Ensure the correct SELinux contexts are set
+##### Read http://wiki.centos.org/HowTos/Network/SecuringSSH
+```
+restorecon -Rv /home/git/.ssh
+```
 **Note:** If you want to use HTTPS, see [Using HTTPS](#using-https) for the additional steps.
 
 **Note:** Make sure your hostname can be resolved on the machine itself by either a
@@ -1247,24 +1276,27 @@ will fail with "Check GitLab API access: FAILED. code: 401" and pushing commits
 will be rejected with "[remote rejected] master -> master (hook declined)".
 
 ### Install gitlab-workhorse
-
-    cd /home/git
-    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-workhorse.git
-    cd gitlab-workhorse
-    sudo -u git -H git checkout v0.7.5
-    sudo -u git -H make
+```
+cd /home/git
+git clone https://gitlab.com/gitlab-org/gitlab-workhorse.git
+cd gitlab-workhorse
+git checkout v0.7.5
+make
+```
 
 ### Initialize Database and Activate Advanced Features
 
-    # Go to GitLab installation folder
+##### Go to GitLab installation folder
+```
+cd /home/git/gitlab
+```
+```
+bundle exec rake gitlab:setup RAILS_ENV=production
+```
 
-    cd /home/git/gitlab
+##### Type 'yes' to create the database tables.
 
-    sudo -u git -H bundle exec rake gitlab:setup RAILS_ENV=production
-
-    # Type 'yes' to create the database tables.
-
-    # When done you see 'Administrator account created:'
+##### When done you see 'Administrator account created:'
 
 **Note:** You can set the Administrator/root password and e-mail by supplying
   them in environmental variables, `GITLAB_ROOT_PASSWORD` and
@@ -1274,7 +1306,9 @@ will be rejected with "[remote rejected] master -> master (hook declined)".
   the server the first time. During the first login you'll be forced to change
   the default password.
 
-    sudo -u git -H bundle exec rake gitlab:setup RAILS_ENV=production GITLAB_ROOT_PASSWORD=yourpassword GITLAB_ROOT_EMAIL=youremail
+```
+bundle exec rake gitlab:setup RAILS_ENV=production GITLAB_ROOT_PASSWORD=yourpassword GITLAB_ROOT_EMAIL=youremail
+```
 
 ### Secure secrets.yml
 
@@ -1286,37 +1320,44 @@ compromised.
 ### Install Init Script
 
 Download the init script (will be `/etc/init.d/gitlab`):
-
-    cp lib/support/init.d/gitlab /etc/init.d/gitlab
+```
+sudo cp /home/git/gitlab/lib/support/init.d/gitlab /etc/init.d/gitlab
+```
 
 And if you are installing with a non-default folder or user copy and edit the defaults file:
-
-    cp lib/support/init.d/gitlab.default.example /etc/default/gitlab
+```
+cp lib/support/init.d/gitlab.default.example /etc/default/gitlab
+```
 
 If you installed GitLab in another directory or as a user other than the default you should change these settings in `/etc/default/gitlab`. Do not edit `/etc/init.d/gitlab` as it will be
 changed on upgrade.
 
 Make GitLab start on boot:
-
-    chkconfig gitlab on
+```
+sudo chkconfig gitlab on
+```
 
 ### Set up logrotate
-
-    cp lib/support/logrotate/gitlab /etc/logrotate.d/gitlab
+```
+sudo cp /home/git/gitlab/lib/support/logrotate/gitlab /etc/logrotate.d/gitlab
+```
 
 ### Check Application Status
 
 Check if GitLab and its environment are configured correctly:
-
-    sudo -u git -H bundle exec rake gitlab:env:info RAILS_ENV=production
+```
+bundle exec rake gitlab:env:info RAILS_ENV=production
+```
 
 ### Compile assets
-
-    sudo -u git -H bundle exec rake assets:precompile RAILS_ENV=production
+```
+bundle exec rake assets:precompile RAILS_ENV=production
+```
 
 ### Start your GitLab instance
-
-    service gitlab start
+```
+service gitlab start
+```
 
 ------
 
