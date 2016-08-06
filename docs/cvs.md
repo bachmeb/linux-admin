@@ -85,4 +85,9 @@ drwxrwxr-x 3 cvs developers 3096 Aug 21 15:11 .
 drwx------ 4 cvs cvs        3096 Aug 21 15:10 ..
 drwxrwxr-x 3 cvs cvs        3096 Aug 21 15:11 CVSROOT
 ```
-Now you can start checking in your source code to the /home/cvs/project1 CVS repository.
+
+##### Set the CVSROOT environment variable
+```
+CVSROOT=/home/cvs/project1/
+export CVSROOT
+```
