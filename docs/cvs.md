@@ -91,3 +91,41 @@ drwxrwxr-x 3 cvs cvs        3096 Aug 21 15:11 CVSROOT
 CVSROOT=/home/cvs/project1/
 export CVSROOT
 ```
+
+##### Make a new directory in your home directory
+```
+cd ~
+mkdir src
+cd src
+echo hello > hello.txt
+```
+
+##### Go to the root directory of the new project
+```
+cd ~/src
+pwd
+```
+
+##### Import the project
+```
+cvs import src VEND tag1
+```
+```
+
+CVS: ----------------------------------------------------------------------
+CVS: Enter Log.  Lines beginning with `CVS:' are removed automatically
+CVS:
+CVS: ----------------------------------------------------------------------
+~                                                                               
+~                                                                               
+~           
+```
+```
+Log message unchanged or not specified
+a)bort, c)ontinue, e)dit, !)reuse this message unchanged for remaining dirs
+Action: (continue) 
+N project2/hello.txt
+cvs import: Importing /home/cvs/project1/project2/subdir
+
+No conflicts created by this import
+```
