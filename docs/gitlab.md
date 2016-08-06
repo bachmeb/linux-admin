@@ -1356,7 +1356,7 @@ bundle exec rake assets:precompile RAILS_ENV=production
 
 ### Start your GitLab instance
 ```
-service gitlab start
+sudo /sbin/service gitlab start
 ```
 
 ------
@@ -1371,39 +1371,44 @@ Use either Nginx or Apache, not both. Official installation guide recommends ngi
 
 You will need a new version of nginx otherwise you might encounter an issue like [this][issue-nginx].
 To do so, follow the instructions provided by the [nginx wiki][nginx-centos] and then install nginx with:
-
-    yum update
-    yum -y install nginx
-    chkconfig nginx on
+```
+sudo yum update
+sudo yum search nginx
+sudo yum install nginx
+sudo chkconfig nginx on
+```
 
 #### Site Configuration
-
-    cp lib/support/nginx/gitlab /etc/nginx/conf.d/gitlab.conf
+```
+sudo cp /home/git/gitlab/lib/support/nginx/gitlab /etc/nginx/conf.d/gitlab.conf
+```
 
 Make sure to edit the config file to match your setup:
-
-    # Change YOUR_SERVER_FQDN to the fully-qualified
-    # domain name of your host serving GitLab.
+##### Change YOUR_SERVER_FQDN to the fully-qualified
+##### domain name of your host serving GitLab.
 
 **Note:** If you want to use HTTPS, replace the `gitlab` Nginx config with `gitlab-ssl`. See [Using HTTPS](#using-https) for HTTPS configuration details.
 
 Add `nginx` user to `git` group:
-
-    usermod -a -G git nginx
-    chmod g+rx /home/git/
+```
+sudo usermod -a -G git nginx
+sudo chmod g+rx /home/git/
+```
 
 #### Test Configuration
 
 Validate your `gitlab` or `gitlab-ssl` Nginx config file with the following command:
-
-    nginx -t
+```
+nginx -t
+```
 
 You should receive `syntax is okay` and `test is successful` messages. If you receive errors check your `gitlab` or `gitlab-ssl` Nginx config file for typos, etc. as indiciated in the error message given.
 
 
 #### Restart
-
-    service nginx restart
+```
+sudo /sbin/service nginx restart
+```
 
 ### Apache
 
@@ -1472,12 +1477,14 @@ If you want to run other websites on the same system, you'll need to add in `/et
 ## 9. Configure the firewall
 
 Poke an iptables hole so users can access the web server (http and https ports) and ssh.
-
-    lokkit -s http -s https -s ssh
+```
+lokkit -s http -s https -s ssh
+```
 
 Restart the service for the changes to take effect:
-
-    service iptables restart
+```
+sudo /sbin/service iptables restart
+```
 
 ## Done!
 
