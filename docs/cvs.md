@@ -5,6 +5,7 @@
 * https://www.youtube.com/watch?v=G7BXtugVGqY
 * https://www.youtube.com/watch?v=odNgQuX47eI
 * http://www.thegeekstuff.com/2011/10/create-cvs-repository/
+* http://www.fisica.uniud.it/~glast/sw/cvs/cvsintro.html
 
 ##### How to find all commits(files&comments) by a person in cvs
 ```
@@ -18,50 +19,63 @@ sudo yum install cvs
 ```
 
 ##### Create CVS User and Groups
-Create cvs user as shown below.
 ```
-useradd cvs
+sudo useradd cvs
 ```
 ```
-passwd cvs
-```
-If you want only developers to access the CVS repository, create a developers group as shown below.
-
-```
-groupadd developers
+sudo passwd cvs
 ```
 
-Create CVS Repository Directory
+##### Create developers group
+```
+sudo groupadd developers
+```
 
-If you are planning to create a CVS repository for project1, create the following /home/cvs/project1 directory and assign appropriate privileges.
+##### Add your account to the devleopers group
+```
+sudo usermod -a -G developers [your user account]
+```
 
+##### Switch to the cvs user
+```
+su cvs
+```
+
+##### Create CVS Repository Directory
 ```
 cd /home/cvs
-```
-
-```
 mkdir project1
 ```
 
-As root, do the following to assign developers group to this directory, also make sure group has full privilege on this project1 directory.
-
+##### Exit the cvs user
 ```
-chgrp developers /home/cvs/project1/
-```
-
-```
-chmod g+srwx /home/cvs/project1
+exit
 ```
 
-Initialize the CVS Repository
+##### Make the cvs home directory group-searchable
+```
+sudo ls -la /home/
+sudo chmod g+x /home/cvs
+```
 
-Currently the /home/cvs/project1 is just an empty directory. To make this as a CVS repository, you should initialize it as shown below.
+##### Give the developers group permission to the project directory
+```
+sudo ls -la /home/cvs/
+sudo chgrp developers /home/cvs/project1
+```
 
+##### Set the group permissions on the directory
+```
+sudo chmod g+srwx /home/cvs/project1
+ls -la /home/cvs/project1
+```
+
+##### Initialize the CVS Repository
 ```
 cvs -d /home/cvs/project1 init
 ```
-Once initialized, you’ll see CVSROOT directory created under the CVS repository.
 
+##### See the CVSROOT directory created under the CVS repository
 ```
 ls -la /home/cvs/project1/
 ```
