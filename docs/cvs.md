@@ -8,6 +8,7 @@
 * http://www.fisica.uniud.it/~glast/sw/cvs/cvsintro.html
 * http://www.linuxhowtos.org/System/cvs_tutorial.htm
 * http://owen.sj.ca.us/~rk/howto/cvs.html#access
+* http://www-mrsrl.stanford.edu/~brian/cvstutorial/
 
 ##### See if cvs is installed
 ```
