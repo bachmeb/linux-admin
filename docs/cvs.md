@@ -7,6 +7,7 @@
 * http://www.thegeekstuff.com/2011/10/create-cvs-repository/
 * http://www.fisica.uniud.it/~glast/sw/cvs/cvsintro.html
 * http://www.linuxhowtos.org/System/cvs_tutorial.htm
+* http://owen.sj.ca.us/~rk/howto/cvs.html#access
 
 ##### See if cvs is installed
 ```
@@ -22,8 +23,6 @@ sudo yum install cvs
 ##### Create CVS User and Groups
 ```
 sudo useradd cvs
-```
-```
 sudo passwd cvs
 ```
 
@@ -45,7 +44,7 @@ su cvs
 ##### Create CVS Repository Directory
 ```
 cd /home/cvs
-mkdir project1
+mkdir cvsroot
 ```
 
 ##### Exit the cvs user
@@ -62,23 +61,29 @@ sudo chmod g+x /home/cvs
 ##### Give the developers group permission to the project directory
 ```
 sudo ls -la /home/cvs
-sudo chgrp developers /home/cvs/project1
+sudo chgrp developers /home/cvs/cvsroot
 ```
 
 ##### Set the group permissions on the directory
 ```
-sudo chmod g+srwx /home/cvs/project1
-ls -la /home/cvs/project1
+sudo chmod g+srwx /home/cvs/cvsroot
+ls -la /home/cvs/cvsroot
 ```
 
-##### Initialize the CVS Repository
+##### Set the CVSROOT environment variable for your user account
 ```
-cvs -d /home/cvs/project1 init
+export CVSROOT=/home/cvs/cvsroot
 ```
 
-##### See the CVSROOT directory created under the CVS repository
+##### Initialize the CVS repository
+*CVS initializes as a repository the directory set in the CVSROOT environment variable*
 ```
-ls -la /home/cvs/project1/
+cvs init
+```
+
+##### See the CVSROOT directory created in the CVS repository
+```
+ls -la /home/cvs/cvsroot
 ```
 ```
 total 12
@@ -87,55 +92,36 @@ drwx------ 4 cvs cvs        3096 Aug 21 15:10 ..
 drwxrwxr-x 3 cvs cvs        3096 Aug 21 15:11 CVSROOT
 ```
 
-##### Set the CVSROOT environment variable for your user account
-*If you don't set this variable, the following two commands will require an additional -d :pserver:cvs@pserver.samba.org:/cvsroot following the cvs command. Exporting the CVSROOT saves a us bit of typing.*
-```
-CVSROOT=/home/cvs/project1/
-export CVSROOT
-```
-
-
-
-
-
-
-
-##### Make a new directory in your home directory
+##### Go to your home directory and create a project directory
 ```
 cd ~
-mkdir src
-cd src
-echo hello > hello.txt
+mkdir project1
+cd project1/
 ```
 
-##### Go to the root directory of the new project
+##### Create a file in the project directory
 ```
-cd ~/src
+nano hello.txt
+```
+
+##### Import the project to the repository
+```
 pwd
+cvs import -m "hello there" ABC XYZ start
 ```
 
-##### Import the project
+##### Delete the project
 ```
-cvs import src VEND tag1
-```
+cd ..
+pwd
+rm -fr project1/
 ```
 
-CVS: ----------------------------------------------------------------------
-CVS: Enter Log.  Lines beginning with `CVS:' are removed automatically
-CVS:
-CVS: ----------------------------------------------------------------------
-~                                                                               
-~                                                                               
-~           
+##### Check the project back out from cvs
 ```
-```
-Log message unchanged or not specified
-a)bort, c)ontinue, e)dit, !)reuse this message unchanged for remaining dirs
-Action: (continue) 
-N project2/hello.txt
-cvs import: Importing /home/cvs/project1/project2/subdir
-
-No conflicts created by this import
+cd ~
+pwd
+cvs co project1
 ```
 
 ##### Find all commits(files&comments) by a person in cvs
