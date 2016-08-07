@@ -54,13 +54,13 @@ exit
 
 ##### Make the cvs home directory group-searchable
 ```
-sudo ls -la /home/
+sudo ls -la /home
 sudo chmod g+x /home/cvs
 ```
 
 ##### Give the developers group permission to the project directory
 ```
-sudo ls -la /home/cvs/
+sudo ls -la /home/cvs
 sudo chgrp developers /home/cvs/project1
 ```
 
@@ -86,11 +86,24 @@ drwx------ 4 cvs cvs        3096 Aug 21 15:10 ..
 drwxrwxr-x 3 cvs cvs        3096 Aug 21 15:11 CVSROOT
 ```
 
-##### Set the CVSROOT environment variable
+##### Set the CVSROOT environment variable for your user account
 ```
 CVSROOT=/home/cvs/project1/
 export CVSROOT
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##### Make a new directory in your home directory
 ```
