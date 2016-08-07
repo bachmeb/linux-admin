@@ -9,6 +9,7 @@
 * http://www.linuxhowtos.org/System/cvs_tutorial.htm
 * http://owen.sj.ca.us/~rk/howto/cvs.html#access
 * http://www-mrsrl.stanford.edu/~brian/cvstutorial/
+* http://www.thathost.com/wincvs-howto/cvsdoc/cvs_2.html
 
 ##### See if cvs is installed
 ```
