@@ -6,13 +6,14 @@
 * https://www.youtube.com/watch?v=odNgQuX47eI
 * http://www.thegeekstuff.com/2011/10/create-cvs-repository/
 * http://www.fisica.uniud.it/~glast/sw/cvs/cvsintro.html
+* http://www.linuxhowtos.org/System/cvs_tutorial.htm
 
-##### How to find all commits(files&comments) by a person in cvs
+##### See if cvs is installed
 ```
-cvs log -t -wJellyJoe
+cvs
 ```
 
-##### Install
+##### Install cvs
 ```
 sudo yum search cvs
 sudo yum install cvs
@@ -87,17 +88,11 @@ drwxrwxr-x 3 cvs cvs        3096 Aug 21 15:11 CVSROOT
 ```
 
 ##### Set the CVSROOT environment variable for your user account
+*If you don't set this variable, the following two commands will require an additional -d :pserver:cvs@pserver.samba.org:/cvsroot following the cvs command. Exporting the CVSROOT saves a us bit of typing.*
 ```
 CVSROOT=/home/cvs/project1/
 export CVSROOT
 ```
-
-
-
-
-
-
-
 
 
 
@@ -141,4 +136,9 @@ N project2/hello.txt
 cvs import: Importing /home/cvs/project1/project2/subdir
 
 No conflicts created by this import
+```
+
+##### Find all commits(files&comments) by a person in cvs
+```
+cvs log -t -wJellyJoe
 ```
