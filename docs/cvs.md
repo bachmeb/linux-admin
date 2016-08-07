@@ -128,6 +128,37 @@ cvs checkout: Updating ABC
 U ABC/hello.txt
 ```
 
+##### Check the log
+```
+cvs log
+```
+```
+cvs log: Logging ABC
+
+RCS file: /home/cvs/cvsroot/ABC/hello.txt,v
+Working file: ABC/hello.txt
+head: 1.1
+branch: 1.1.1
+locks: strict
+access list:
+symbolic names:
+	start: 1.1.1.1
+	XYZ: 1.1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.1
+date: 2016/08/07 15:29:22;  author: bachmeb;  state: Exp;
+branches:  1.1.1;
+Initial revision
+----------------------------
+revision 1.1.1.1
+date: 2016/08/07 15:29:22;  author: bachmeb;  state: Exp;  lines: +0 -0
+hello there
+=============================================================================
+```
+
 ##### Find all commits(files&comments) by a person in cvs
 ```
 cvs log -t -wJellyJoe
