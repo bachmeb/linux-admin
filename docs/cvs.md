@@ -121,7 +121,11 @@ rm -fr project1/
 ```
 cd ~
 pwd
-cvs co project1
+cvs co ABC
+```
+```
+cvs checkout: Updating ABC
+U ABC/hello.txt
 ```
 
 ##### Find all commits(files&comments) by a person in cvs
