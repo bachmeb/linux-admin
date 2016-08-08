@@ -1150,3 +1150,10 @@ git branch --set-upstream-to=origin/master master
 ```
 git pull
 ```
+
+##### Push all branches and tags
+* http://stackoverflow.com/questions/4885999/with-github-how-do-i-push-all-branches-when-adding-an-existing-repo
+```
+git push --all
+git push --tags
+```
