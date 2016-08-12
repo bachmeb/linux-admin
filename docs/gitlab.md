@@ -346,7 +346,7 @@ sudo su - postgres
 ```
 psql -d template1
 ```
-```
+```c
 # psql (9.4.3)
 # Type "help" for help.
 ```
@@ -354,7 +354,7 @@ psql -d template1
 ```
 template1=# CREATE USER git CREATEDB;
 ```
-```
+```c
 # CREATE ROLE
 ```
 ##### Create the gitlab db and make git the owner
@@ -463,7 +463,7 @@ chkconfig | grep redis
 
 Configure redis to use sockets:
 ```
-cp /etc/redis.conf /etc/redis.conf.orig
+sudo cp /etc/redis.conf /etc/redis.conf.orig
 ```
 
 Disable Redis listening on TCP by setting 'port' to 0:
@@ -510,7 +510,7 @@ sudo /sbin/service redis restart
 #Starting redis-server:                                     [  OK  ]
 ```
 
-Add git to the redis group:
+##### Add git to the redis group:
 ```
 sudo usermod -aG redis git
 ```
@@ -528,9 +528,8 @@ cd ~
 ### Clone the Source
 ##### Clone GitLab repository
 ```
-git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 8-9-stable gitlab
+git -v clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 8-9-stable gitlab
 ```
-
 **Note:** You can change `8-9-stable` to `master` if you want the *bleeding edge* version, but do so with caution!
 
 ### Configure it
