@@ -1248,11 +1248,12 @@ bundle config build.pg --with-pg-config=/usr/pgsql-9.3/bin/pg_config
 nproc
 bundle install -jN --deployment --without development test mysql aws kerberos
 ```
-
+/*
 ##### Or for MySQL (note, the option says "without ... postgres")
 ```
 sudo -u git -H bundle install --deployment --without development test postgres aws kerberos
 ```
+*/
 
 **Note:** If you want to use Kerberos for user authentication, then omit `kerberos`
 in the `--without` option above.
@@ -1269,7 +1270,9 @@ sudo ln -s /usr/local/bin/git /usr/bin/git
 
 ##### Run the installation task for gitlab-shell (replace `REDIS_URL` if needed):
 ```
-sudo -u git -H bundle exec rake gitlab:shell:install[v3.0.0] REDIS_URL=unix:/var/run/redis/redis.sock RAILS_ENV=production
+sudo su -l git
+cd /home/git/gitlab
+bundle exec rake gitlab:shell:install[v3.0.0] REDIS_URL=unix:/var/run/redis/redis.sock RAILS_ENV=production
 ```
 *fix the path to git in the gitlab config file above if git was installed to /usr/local/bin/git*
 
@@ -1404,6 +1407,10 @@ sudo cp /home/git/gitlab/lib/support/nginx/gitlab /etc/nginx/conf.d/gitlab.conf
 Make sure to edit the config file to match your setup:
 ##### Change YOUR_SERVER_FQDN to the fully-qualified
 ##### domain name of your host serving GitLab.
+
+```
+sudo nano /etc/nginx/conf.d/gitlab.conf
+```
 
 **Note:** If you want to use HTTPS, replace the `gitlab` Nginx config with `gitlab-ssl`. See [Using HTTPS](#using-https) for HTTPS configuration details.
 
