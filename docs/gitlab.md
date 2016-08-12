@@ -528,7 +528,7 @@ cd ~
 ### Clone the Source
 ##### Clone GitLab repository
 ```
-git -v clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 8-9-stable gitlab
+git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 8-9-stable gitlab
 ```
 **Note:** You can change `8-9-stable` to `master` if you want the *bleeding edge* version, but do so with caution!
 
@@ -546,7 +546,7 @@ cp config/gitlab.yml.example config/gitlab.yml
 
 ##### Update GitLab config file, follow the directions at top of file
 ```
-editor config/gitlab.yml
+vi config/gitlab.yml
 ```
 ```yml
 # # # # # # # # # # # # # # # # # #
@@ -1122,6 +1122,7 @@ chmod 0600 config/secrets.yml
 ```
 ##### Make sure GitLab can write to the log/ and tmp/ directories
 ```
+pwd
 chown -R git log/
 chown -R git tmp/
 chmod -R u+rwX,go-w log/
