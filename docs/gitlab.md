@@ -49,38 +49,42 @@ The GitLab installation consists of setting up the following components:
 ### Add EPEL repository
 ##### Download the GPG key for EPEL repository from [fedoraproject][keys] and install it on your system:
 ```
-wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6 https://getfedora.org/static/0608B895.txt
+sudo wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6 https://getfedora.org/static/0608B895.txt
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
 ```
 
 ##### Verify that the key got installed successfully:
 ```
 rpm -qa gpg*
-gpg-pubkey-0608b895-4bd22942
+```
+```c
+# gpg-pubkey-0608b895-4bd22942
 ```
 
 ##### Install the `epel-release-6-8.noarch` package, which will enable EPEL repository on your system:
 ```
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+sudo rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 ```
 **Note:** Don't mind the `x86_64`, if you install on a i686 system you can use the same commands.
 
 ### Add Remi's RPM repository
 ##### Download the GPG key for Remi's repository and install it on your system:
 ```
-wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-remi http://rpms.famillecollet.com/RPM-GPG-KEY-remi
+sudo wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-remi http://rpms.famillecollet.com/RPM-GPG-KEY-remi
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-remi
 ```
 
 ##### Verify that the key got installed successfully:
 ```
 rpm -qa gpg*
-gpg-pubkey-00f97f56-467e318a
+```
+```c
+# gpg-pubkey-00f97f56-467e318a
 ```
 
 ##### Install the `remi-release-6` package, which will enable remi-safe repository on your system:
 ```
-rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 ```
 
 ##### Verify that the EPEL and remi-safe repositories are enabled as shown below:
@@ -174,7 +178,7 @@ sudo yum install zlib-devel perl-CPAN gettext curl-devel expat-devel gettext-dev
 
 ##### Download and extract it:
 ```
-mkdir /tmp/git && cd /tmp/git
+mkdir -p ~/tmp/git && cd ~/tmp/git
 curl --progress https://www.kernel.org/pub/software/scm/git/git-2.9.0.tar.gz | tar xz
 cd git-2.9.0
 sudo ./configure
@@ -184,6 +188,9 @@ sudo make prefix=/usr/local install
 Make sure Git is in your `$PATH`:
 ```
 which git
+```
+```c
+# /usr/local/bin/git
 ```
 ##### You might have to logout and login again for the `$PATH` to take effect.
 ```
