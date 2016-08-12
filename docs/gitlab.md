@@ -220,7 +220,7 @@ make uninstall
 
 Download Ruby and compile it:
 ```
-mkdir /tmp/ruby && cd /tmp/ruby
+mkdir -p ~/tmp/ruby && cd ~/tmp/ruby
 curl --progress https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.9.tar.gz | tar xz
 cd ruby-2.1.9
 sudo ./configure --disable-install-rdoc
@@ -268,11 +268,12 @@ Create a `git` user for Gitlab:
 sudo adduser --system --shell /bin/bash --comment 'GitLab' --create-home --home-dir /home/git/ git
 ```
 
-**Important:** In order to include `/usr/local/bin` to git user's PATH, one way is to edit the sudoers file. As root run:
+**Important:** 
+
+##### In order to include `/usr/local/bin` to git user's PATH, one way is to edit the sudoers file
 ```
 sudo visudo
 ```
-
 ##### Then search for this line:
 ```
 Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin
@@ -297,11 +298,13 @@ If there are any previous versions remove them:
 yum list installed | grep postgresql
 ```
 ```
-yum remove postgresql
+sudo yum remove postgresql
 ```
 Install the pgdg repositories:
 ```
 sudo rpm -Uvh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-centos93-9.3-2.noarch.rpm
+or
+sudo rpm -Uvh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-2.noarch.rpm
 ```
 
 ##### Install `postgresql93-server`, `postgreqsql93-devel` and the `postgresql93-contrib` libraries:
