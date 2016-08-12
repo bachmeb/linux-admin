@@ -1142,6 +1142,11 @@ mkdir public/uploads/
 ##### Make sure only the GitLab user has access to the public/uploads/ directory now that files in public/uploads are served by gitlab-workhorse
 ```
 chmod 0700 public/uploads
+```
+
+##### Make the repositories direcory
+```
+mkdir /home/git/repositories/
 chmod ug+rwX,o-rwx /home/git/repositories/
 ```
 
@@ -1240,7 +1245,8 @@ cd /home/git/gitlab
 ##### For PostgreSQL (note, the option says "without ... mysql")
 ```
 bundle config build.pg --with-pg-config=/usr/pgsql-9.3/bin/pg_config
-bundle install --deployment --without development test mysql aws kerberos
+nproc
+bundle install -jN --deployment --without development test mysql aws kerberos
 ```
 
 ##### Or for MySQL (note, the option says "without ... postgres")
@@ -1256,14 +1262,16 @@ in the `--without` option above.
 GitLab Shell is an SSH access and repository management software developed specially for GitLab.
 ##### Create a symbolic link to /usr/local/bin/git
 ```
+exit 
+whoami
 sudo ln -s /usr/local/bin/git /usr/bin/git
 ```
 
 ##### Run the installation task for gitlab-shell (replace `REDIS_URL` if needed):
 ```
-DID NOT WORK
 sudo -u git -H bundle exec rake gitlab:shell:install[v3.0.0] REDIS_URL=unix:/var/run/redis/redis.sock RAILS_ENV=production
 ```
+*fix the path to git in the gitlab config file above if git was installed to /usr/local/bin/git*
 
 ##### By default, the gitlab-shell config is generated from your main GitLab config.
 ##### You can review (and modify) the gitlab-shell config as follows:
