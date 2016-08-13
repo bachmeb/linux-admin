@@ -271,4 +271,9 @@ ad ae af ag ai al am ao ap ar as at au aw az ba bb bd be bf bg bh bi bj bl bm bn
 ```
 sudo cat /var/log/maillog | grep 'connect from unknown' | sed s/^.*unknown/asdf/ | cut -d "[" -f2 | cut -d "]" -f1
 ```
-
+```
+sudo cat /var/log/maillog | grep 'connect from unknown' | sed s/^.*unknown/asdf/ | cut -d "[" -f2 | cut -d "]" -f1 > unknown.txt
+```
+```
+sort -u unknown.txt > unique.txt
+```
