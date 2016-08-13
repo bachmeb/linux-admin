@@ -150,6 +150,7 @@ sudo /sbin/service iptables start
 ##### Add a rule to drop traffic from a malcious IP address
 ```
 sudo /sbin/iptables -I INPUT -j DROP -s [ --- malicious ip ---]
+sudo /sbin/iptables -I OUTPUT -j DROP -s [ --- malicious ip ---]
 ```
 
 ##### Confirm that the rule was added
