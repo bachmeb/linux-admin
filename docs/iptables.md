@@ -271,9 +271,11 @@ ad ae af ag ai al am ao ap ar as at au aw az ba bb bd be bf bg bh bi bj bl bm bn
 ```
 sudo cat /var/log/maillog | grep 'connect from unknown' | sed s/^.*unknown/asdf/ | cut -d "[" -f2 | cut -d "]" -f1
 ```
+##### Write the IPs to a file
 ```
 sudo cat /var/log/maillog | grep 'connect from unknown' | sed s/^.*unknown/asdf/ | cut -d "[" -f2 | cut -d "]" -f1 > unknown.txt
 ```
+##### Sort the file and filter for unique addresses
 ```
 sort -u unknown.txt > unique.txt
 ```
