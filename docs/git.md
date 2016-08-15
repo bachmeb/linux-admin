@@ -1157,3 +1157,21 @@ git pull
 git push --all
 git push --tags
 ```
+
+##### CVS Import
+* https://git-scm.com/docs/git-cvsimport
+
+##### Install cvsps
+```
+sudo yum install cvsps
+```
+##### Make a new directory for the repository
+```
+cd ~
+mkdir newrepo
+```
+##### Change to the new repo directory and run the import tool naming the module to be imported
+```
+cd newrepo
+git cvsimport [what]
+```
