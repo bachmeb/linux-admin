@@ -21,7 +21,12 @@ uname -r
 ```
 
 ```
-yum install VirtualBox-5.1
+yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-PAE-devel dkms
+```
+
+```
+sudo yum search virtualbox
+sudo yum install VirtualBox-5.1
 ```
 
 ```
