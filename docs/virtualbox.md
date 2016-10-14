@@ -2,6 +2,7 @@
 
 ## References
 * http://www.if-not-true-then-false.com/2010/install-virtualbox-with-yum-on-fedora-centos-red-hat-rhel/
+* http://superuser.com/questions/499059/unable-to-install-virtualbox-specify-kern-dir-directory-installing-vir
 
 ##### Get the repo
 ```
@@ -21,7 +22,12 @@ uname -r
 ```
 
 ```
+yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
 yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-PAE-devel dkms
+```
+```
+sudo yum install kernel-devel-2.6.32-642.el6.x86_64
+
 ```
 
 ```
