@@ -8,3 +8,8 @@
 ```
 sudo yum search open-vm-tools
 ```
+
+##### Install
+```
+sudo yum install open-vm-tools
+```
