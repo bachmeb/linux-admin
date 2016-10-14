@@ -26,6 +26,19 @@ yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-hea
 
 ```
 sudo yum search virtualbox
+```
+```c
+/*
+VirtualBox-3.2.x86_64 : Oracle VM VirtualBox
+VirtualBox-4.0.x86_64 : Oracle VM VirtualBox
+VirtualBox-4.1.x86_64 : Oracle VM VirtualBox
+VirtualBox-4.2.x86_64 : Oracle VM VirtualBox
+VirtualBox-4.3.x86_64 : Oracle VM VirtualBox
+VirtualBox-5.0.x86_64 : Oracle VM VirtualBox
+VirtualBox-5.1.x86_64 : Oracle VM VirtualBox
+*/
+```
+```
 sudo yum install VirtualBox-5.1
 ```
 
