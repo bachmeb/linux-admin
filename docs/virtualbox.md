@@ -43,5 +43,5 @@ sudo yum install VirtualBox-5.1
 ```
 
 ```
-service vboxdrv setup
+/etc/init.d/vboxdrv setup
 ```
