@@ -607,3 +607,14 @@ questions about PHP licensing, please contact license@php.net.
 
 ```
 
+```
+whereis php.ini
+```
+
+```
+cat /etc/php.ini
+```
+
+```
+cat /etc/httpd/conf.d/php.conf
+```
