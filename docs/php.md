@@ -618,3 +618,7 @@ cat /etc/php.ini
 ```
 cat /etc/httpd/conf.d/php.conf
 ```
+
+```
+sudo /sbin/service httpd restart
+```
