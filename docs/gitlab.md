@@ -1534,6 +1534,9 @@ redirected back to the login screen.
 The default account's username is **root**. Provide the password you created
 earlier and login. After login you can change the username if you wish.
 
+## Configure SMTP Email
+* http://stackoverflow.com/questions/10690255/gitlab-email-setup
+
 **Enjoy!**
 
 You can use `sudo service gitlab start` and `sudo service gitlab stop` to start and stop GitLab.
