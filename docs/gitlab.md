@@ -1535,7 +1535,9 @@ The default account's username is **root**. Provide the password you created
 earlier and login. After login you can change the username if you wish.
 
 ## Configure SMTP Email
+* https://elijahpaul.co.uk/using-an-smtp-server-with-gitlab/
 * http://stackoverflow.com/questions/10690255/gitlab-email-setup
+* http://api.rubyonrails.org/classes/ActionMailer/Base.html
 
 **Enjoy!**
 
