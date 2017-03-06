@@ -131,10 +131,10 @@ ifconfig
 ```
 
 ##### Connect via SSH
-* [ssh](/docs/common/ssh.md)
+* [ssh](/docs/ssh.md)
 
 ##### Create a new user account
-* [useradd](/docs/common/useradd.md)
+* [useradd](/docs/useradd.md)
 
 ##### Disconnect
 ```
@@ -142,20 +142,20 @@ exit
 ```
 
 ##### Re-connect via SSH
-* [ssh](/docs/common/ssh.md)
+* [ssh](/docs/ssh.md)
 
 ##### Configure bash
-* [bash](/docs/common/bash.md)
+* [bash](/docs/bash.md)
 
 ##### Check the Linux distro version
-* [cat /proc/version](/docs/common/version.md)
+* [cat /proc/version](/docs/version.md)
 
 ##### Check the date and timezone
-* [date](/docs/common/date.md)
+* [date](/docs/date.md)
 
 ##### Check the network settings
-* [network](/docs/common/network.md)
+* [network](/docs/network.md)
 
 ##### Install system updates
-* [yum](/docs/common/yum.md)
+* [yum](/docs/yum.md)
 
